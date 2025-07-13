@@ -41,7 +41,7 @@ const HeroSection = ({ setCurrentPage }) => (
     </div>
     <div className="container mx-auto px-6 relative z-10 text-center">
       <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-        TH Business : Votre partenaire pour concrétiser vos ambitions
+        MH Business : Votre partenaire pour concrétiser vos ambitions
       </h1>
       <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-200">
         Nous accompagnons les entrepreneurs à chaque étape, de la création de leur présence en ligne à la gestion administrative, pour une croissance sereine et efficace.

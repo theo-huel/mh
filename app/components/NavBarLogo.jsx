@@ -41,11 +41,11 @@ const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc
   return (
     <nav className="bg-white shadow-md fixed w-full z-50 top-0">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-        {/* Logo ou Texte TH Business */}
+        {/* Logo ou Texte MH Business */}
         <div className="flex items-center cursor-pointer" onClick={() => setCurrentPage('home')}>
           <Image
             src="/MHlogo.svg" // Utilise l'import de ton logo ici
-            alt="Logo TH Business"
+            alt="Logo MH Business"
             width={60} // Définis la largeur de ton logo (en pixels)
             height={20} // Définis la hauteur de ton logo (en pixels)
             className="rounded-md" // Classes Tailwind pour le style

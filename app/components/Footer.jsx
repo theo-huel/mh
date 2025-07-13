@@ -31,7 +31,7 @@ const Footer = ({ setCurrentPage }) => (
     <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Section 1: À Propos */}
       <div>
-        <h3 className="text-xl font-bold mb-4 text-indigo-400">TH Business</h3>
+        <h3 className="text-xl font-bold mb-4 text-indigo-400">MH Business</h3>
         <p className="text-gray-400 text-sm">
           Votre partenaire dédié pour propulser votre entreprise. Nous vous accompagnons de la conception de votre site web à la gestion administrative, en passant par l'identité visuelle.
         </p>
@@ -57,7 +57,7 @@ const Footer = ({ setCurrentPage }) => (
         </p>
         <p className="text-gray-400 flex items-center">
           <Icon name="Briefcase" className="w-5 h-5 mr-2 text-indigo-400" />
-          TH Business
+          MH Business
         </p>
         <div className="flex space-x-4 mt-4">
           {/* Liens vers les réseaux sociaux (placeholders) */}
@@ -68,7 +68,7 @@ const Footer = ({ setCurrentPage }) => (
       </div>
     </div>
     <div className="text-center text-gray-500 text-sm mt-8 pt-8 border-t border-gray-800">
-      &copy; {new Date().getFullYear()} TH Business. Tous droits réservés.
+      &copy; {new Date().getFullYear()} MH Business. Tous droits réservés.
     </div>
   </footer>
 );

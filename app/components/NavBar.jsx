@@ -43,7 +43,7 @@ const Navbar = ({ setCurrentPage }) => {
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
         {/* Logo */}
         <div className="text-2xl font-bold text-indigo-600 cursor-pointer" onClick={() => setCurrentPage('home')}>
-          TH Business
+          MH Business
         </div>
 
         {/* Desktop Navigation */}
