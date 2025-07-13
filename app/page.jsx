@@ -57,7 +57,7 @@ const CallToAction = ({ setCurrentPage }) => (
     <div className="container mx-auto px-6 text-center">
       <h2 className="text-4xl font-extrabold mb-4">Prêt à propulser votre entreprise ?</h2>
       <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-        Que ce soit pour un site web, une identité visuelle forte ou une meilleure gestion, TH Business est là pour vous.
+        Que ce soit pour un site web, une identité visuelle forte ou une meilleure gestion, MH Business est là pour vous.
       </p>
       <MonBouton onClick={() => setCurrentPage('contact')} variant="secondary">
         Contactez-moi dès aujourd'hui !
@@ -93,14 +93,14 @@ const HomePage = ({ setCurrentPage }) => (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-6 text-center">
         <SectionTitle
-          title="Qui est TH Business ?"
+          title="Qui est MH Business ?"
           subtitle="Votre partenaire dédié à la réussite entrepreneuriale."
         />
         <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-          TH Business est né de la volonté d'accompagner les entrepreneurs dans la concrétisation de leurs projets. Que vous soyez au début de votre aventure ou en phase de croissance, je vous apporte les outils et le soutien nécessaires pour atteindre vos objectifs. Mon approche est personnalisée, pragmatique et orientée résultats.
+          MH Business est né de la volonté d'accompagner les entrepreneurs dans la concrétisation de leurs projets. Que vous soyez au début de votre aventure ou en phase de croissance, je vous apporte les outils et le soutien nécessaires pour atteindre vos objectifs. Mon approche est personnalisée, pragmatique et orientée résultats.
         </p>
         <MonBouton onClick={() => setCurrentPage('about')} variant="primary">
-          En savoir plus sur TH Business <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
+          En savoir plus sur MH Business <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
         </MonBouton>
       </div>
     </section>
@@ -137,11 +137,11 @@ const HomePage = ({ setCurrentPage }) => (
       </div>
     </section>
 
-    {/* Section Pourquoi choisir TH Business ? */}
+    {/* Section Pourquoi choisir MH Business ? */}
     <section className="py-16 bg-indigo-50">
       <div className="container mx-auto px-6">
         <SectionTitle
-          title="Pourquoi choisir TH Business ?"
+          title="Pourquoi choisir MH Business ?"
           subtitle="Des avantages concrets pour votre développement."
         />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
@@ -193,19 +193,19 @@ const HomePage = ({ setCurrentPage }) => (
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <TestimonialCard
-            quote="TH Business a transformé ma présence en ligne. Mon nouveau site est magnifique et attire plus de clients que jamais !"
+            quote="MH Business a transformé ma présence en ligne. Mon nouveau site est magnifique et attire plus de clients que jamais !"
             author="Sophie D."
             title="Fondatrice, 'Les Délices de Sophie'"
             imageSrc="https://placehold.co/96x96/E0E7FF/4F46E5?text=SD"
           />
           <TestimonialCard
-            quote="Grâce à l'accompagnement de TH Business, la gestion administrative de mon entreprise est enfin fluide. Un vrai soulagement !"
+            quote="Grâce à l'accompagnement de MH Business, la gestion administrative de mon entreprise est enfin fluide. Un vrai soulagement !"
             author="Marc L."
             title="Gérant, 'Solutions BTP'"
             imageSrc="https://placehold.co/96x96/E0E7FF/4F46E5?text=ML"
           />
           <TestimonialCard
-            quote="Le conseil stratégique de TH Business a été crucial pour le lancement de ma marque. Je recommande vivement !"
+            quote="Le conseil stratégique de MH Business a été crucial pour le lancement de ma marque. Je recommande vivement !"
             author="Clara V."
             title="Créatrice, 'Atelier Clara'"
             imageSrc="https://placehold.co/96x96/E0E7FF/4F46E5?text=CV"
@@ -223,21 +223,21 @@ const AboutPage = () => (
   <main className="pt-20 bg-gray-50">
     <section className="py-16 container mx-auto px-6">
       <SectionTitle
-        title="À Propos de TH Business"
+        title="À Propos de MH Business"
         subtitle="Mon parcours, ma philosophie, mon engagement."
       />
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center md:items-start mb-10">
           <img
             src="https://placehold.co/200x200/E0E7FF/4F46E5?text=Votre+Photo"
-            alt="Photo du consultant TH Business"
+            alt="Photo du consultant MH Business"
             className="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-8 border-4 border-indigo-200"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/200x200/E0E7FF/4F46E5?text=Votre+Photo"; }}
           />
           <div>
             <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center md:text-left">Mon Histoire et ma Mission</h3>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Après plusieurs années d'expérience dans divers domaines liés à l'entrepreneuriat (développement web, marketing digital, gestion de projet), j'ai constaté un besoin récurrent chez les petites et moyennes entreprises : un accompagnement global et pragmatique. C'est ainsi qu'est né TH Business. Ma mission est de simplifier la vie des entrepreneurs en leur fournissant les outils et les compétences nécessaires pour se concentrer sur ce qu'ils font de mieux : développer leur activité.
+              Après plusieurs années d'expérience dans divers domaines liés à l'entrepreneuriat (développement web, marketing digital, gestion de projet), j'ai constaté un besoin récurrent chez les petites et moyennes entreprises : un accompagnement global et pragmatique. C'est ainsi qu'est né MH Business. Ma mission est de simplifier la vie des entrepreneurs en leur fournissant les outils et les compétences nécessaires pour se concentrer sur ce qu'ils font de mieux : développer leur activité.
             </p>
           </div>
         </div>
@@ -267,7 +267,7 @@ const AboutPage = () => (
           Je crois fermement en la force du collectif. C'est pourquoi, pour certains besoins spécifiques qui dépassent mon champ d'action direct, je n'hésite pas à vous mettre en relation avec des partenaires fiables et reconnus dans leur domaine (experts-comptables, graphistes spécialisés, imprimeurs, etc.). Mon objectif est toujours de vous apporter la meilleure solution, qu'elle vienne de moi ou de mon réseau.
         </p>
         <p className="text-gray-700 text-lg leading-relaxed">
-          Ma vision pour TH Business est de devenir le point de contact privilégié des entrepreneurs cherchant un accompagnement global et personnalisé. Je veux que chaque client se sente soutenu, compris et équipé pour faire face aux défis du monde des affaires.
+          Ma vision pour MH Business est de devenir le point de contact privilégié des entrepreneurs cherchant un accompagnement global et personnalisé. Je veux que chaque client se sente soutenu, compris et équipé pour faire face aux défis du monde des affaires.
         </p>
       </div>
     </section>
@@ -355,7 +355,7 @@ const ContactPage = () => {
     <main className="pt-20 bg-gray-50">
       <section className="py-16 container mx-auto px-6">
         <SectionTitle
-          title="Contactez TH Business"
+          title="Contactez MH Business"
           subtitle="Discutons de votre projet et de la manière dont je peux vous aider."
         />
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
@@ -426,7 +426,7 @@ const ContactPage = () => {
             </p>
             <p className="text-gray-700 text-lg">
               <Icon name="Briefcase" className="inline-block w-6 h-6 mr-2 text-indigo-600" />
-              TH Business
+              MH Business
             </p>
             <p className="text-gray-700 text-lg mt-2">
               Je m'engage à vous répondre dans les plus brefs délais.
