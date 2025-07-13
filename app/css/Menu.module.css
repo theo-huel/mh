@@ -1,0 +1,111 @@
+
+
+/* Barre de navigation (à gauche) */
+.navbar {
+    width: 200px;
+    height: 99vh;
+    background-color: #1c1c1c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+/* Conteneur du logo */
+.navbar .logo {
+    width: 120px; /* Augmenter la taille */
+    height: 120px; /* Augmenter la taille */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Cache les débordements */
+    border-radius: 50%; /* Rend le conteneur rond */
+    margin-bottom: 0px;
+    background-color: transparent; /* Supprimer la pastille jaune */
+}
+
+/* Image du logo */
+.navbar .logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Remplir l'espace sans déformer l'image */
+    border-radius: 50%; /* Assure que l'image suit bien la forme ronde */
+    margin: 0; /* Supprimer la marge si présente */
+}
+
+
+/* Boutons de navigation */
+.navbar button {
+    background-color: #f4f4f4;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar .profile {
+    background-color: #1c1c1c;
+    color: green;
+    border: none;
+    padding: 0px;
+    margin-bottom: 30px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.navbar .profile:hover {
+
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+    color: goldenrod;
+}
+.navbar .profile:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease-in-out;
+}
+
+
+
+
+/* Bouton déconnexion */
+.navbar .logout {
+    margin-top: auto;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Contenu principal */
+.main-content {
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+    position: absolute;
+    left: 300px;
+    top: 0;
+
+}
+
+/* Titre */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-left: 0; /* Aucun espace supplémentaire */
+    text-align: left;
+}
+

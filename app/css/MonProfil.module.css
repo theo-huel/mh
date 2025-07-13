@@ -1,0 +1,144 @@
+
+/* Barre de navigation (à gauche) */
+.navbar {
+    width: 200px;
+    height: 100vh;
+    background-color: #1c1c1c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Contenu principal */
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Espace entre les colonnes */
+    margin-left: 220px; /* Pour compenser la largeur de la navbar */
+    padding: 40px 20px;
+    color: white;
+    min-height: 100vh;
+    background-color: #121212;
+}
+
+/* Titre */
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Conteneur du logo */
+.navbar .logo {
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Cache les débordements */
+    border-radius: 50%; /* Rend le conteneur rond */
+    background-color: goldenrod;
+    margin-bottom: 0px;
+
+}
+
+/* Image du logo */
+.navbar .logo img {
+
+    width: 100%;
+    height: 100%;
+    object-fit: fill; /* Ajuste l'image pour éviter la déformation */
+    border-radius: 50%; /* Assure que l'image suit bien la forme ronde */
+    margin: 20px;
+
+}
+
+/* Boutons de navigation */
+.navbar button {
+    background-color: #f4f4f4;
+    color: black;
+    border: none;
+    padding: 10px;
+    margin: 10px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.navbar .profile {
+    background-color: #1c1c1c;
+    color: green;
+    border: none;
+    padding: 0px;
+    margin-bottom: 30px;
+    width: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.navbar .profile:hover {
+
+    text-decoration: underline;
+    text-decoration-color: goldenrod;
+    color: goldenrod;
+}
+.navbar .profile:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease-in-out;
+}
+
+
+/* Bouton déconnexion */
+.navbar .logout {
+    margin-top: auto;
+    padding: 10px;
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.details{
+    flex: 1; /* Occupe 1/3 de l'espace disponible */
+    display: flex;
+    flex-direction: column;
+}
+
+.valid{
+    background-color: green;
+}
+.refused{
+    background-color: red;
+}
+
+.passwordContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.passwordContainer input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.eyeIcon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+
+    color: #555;
+}
