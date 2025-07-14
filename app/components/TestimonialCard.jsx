@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+
 import MyButton from './MyButton.jsx'
-import Image from 'next/image';
+//import btn from '../css/MonBouton.module.css';
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -27,80 +27,23 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
-// Composant Navbar
-const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc en prop
-  const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: 'Accueil', page: 'home' },
-    { name: 'À Propos', page: 'about' },
-    { name: 'Services', page: 'services' },
-    { name: 'Contact', page: 'contact' },
-  ];
+// Composant TestimonialCard
+const TestimonialCard = ({ quote, author, title, imageSrc }) => (
+  <div className="bg-white rounded-xl shadow-lg p-8 flex flex-col items-center text-center border border-gray-100">
+    <img
+      src={imageSrc}
+      alt={`Photo de ${author}`}
+      className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-indigo-200"
+      onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/96x96/E0E7FF/4F46E5?text=Client"; }}
+    />
+    <Icon name="Quote" className="w-10 h-10 text-indigo-500 mb-4" />
+    <p className="text-gray-700 italic mb-4 text-lg">"{quote}"</p>
+    <p className="font-bold text-gray-900">{author}</p>
+    <p className="text-gray-500 text-sm">{title}</p>
+  </div>
+);
 
-  return (
-    <nav className="bg-white shadow-md fixed w-full z-50 top-0 my-0">
-      <div className="container mx-auto px-6 py-4 flex items-center ">
-        {/* Logo ou Texte MH Business */}
-        <div className="flex items-center cursor-pointer" onClick={() => setCurrentPage('home')}>
-          <Image
-            src="/MHlogo.svg" // Utilise l'import de ton logo ici
-            alt="Logo MH Business"
-            width={60} // Définis la largeur de ton logo (en pixels)
-            height={20} // Définis la hauteur de ton logo (en pixels)
-            className="rounded-md" // Classes Tailwind pour le style
-            priority // Pour charger le logo en priorité (important pour le LCP)
-          />
-        </div>
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-grow justify-center space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href="#"
-              onClick={() => setCurrentPage(item.page)}
-              className="text-gray-700 hover:text-[#AD9452] font-medium transition duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
+export default TestimonialCard;
 
-      
-        {/* Bouton Prendre rdv */}
-        <div className="hidden md:flex ml-auto">
-          <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" >
-          Prendre rendez-vous
-        </MyButton>
-        </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden ml-auto">
-          <MyButton onClick={() => setIsOpen(!isOpen)} variant="outline" className="p-2">
-            {isOpen ? <Icon name="X" className="h-6 w-6" /> : <Icon name="Menu" className="h-6 w-6" />}
-          </MyButton>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg py-4">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href="#"
-              onClick={() => {
-                setCurrentPage(item.page);
-                setIsOpen(false);
-              }}
-              className="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#AD9452] transition duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
-};
-export default Navbarlogo;

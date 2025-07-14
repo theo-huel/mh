@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+
 import MyButton from './MyButton.jsx'
-import Image from 'next/image';
+import btn from '../css/MonBouton.module.css';
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -27,80 +27,20 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
-// Composant Navbar
-const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc en prop
-  const [isOpen, setIsOpen] = useState(false);
+// Composant CallToAction
+const CallToAction = ({ setCurrentPage }) => (
+  <section className="bg-[#AD9452] text-white py-20 rounded-xl mx-auto max-w-6xl my-20 shadow-xl">
+    <div className="container mx-auto px-6 text-center">
+      <h2 className="text-4xl font-extrabold mb-4">Prêt à propulser votre entreprise ?</h2>
+      <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
+        Que ce soit pour un site web, une identité visuelle forte ou une meilleure gestion, MH Business est là pour vous.
+      </p>
+      <MyButton onClick={() => setCurrentPage('contact')} className="bg-[#AD9452] text-white">
+        Contactez-moi dès aujourd'hui !
+      </MyButton>
+    </div>
+  </section>
+);
+export default CallToAction;
 
-  const navItems = [
-    { name: 'Accueil', page: 'home' },
-    { name: 'À Propos', page: 'about' },
-    { name: 'Services', page: 'services' },
-    { name: 'Contact', page: 'contact' },
-  ];
 
-  return (
-    <nav className="bg-white shadow-md fixed w-full z-50 top-0 my-0">
-      <div className="container mx-auto px-6 py-4 flex items-center ">
-        {/* Logo ou Texte MH Business */}
-        <div className="flex items-center cursor-pointer" onClick={() => setCurrentPage('home')}>
-          <Image
-            src="/MHlogo.svg" // Utilise l'import de ton logo ici
-            alt="Logo MH Business"
-            width={60} // Définis la largeur de ton logo (en pixels)
-            height={20} // Définis la hauteur de ton logo (en pixels)
-            className="rounded-md" // Classes Tailwind pour le style
-            priority // Pour charger le logo en priorité (important pour le LCP)
-          />
-        </div>
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-grow justify-center space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href="#"
-              onClick={() => setCurrentPage(item.page)}
-              className="text-gray-700 hover:text-[#AD9452] font-medium transition duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-
-      
-        {/* Bouton Prendre rdv */}
-        <div className="hidden md:flex ml-auto">
-          <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" >
-          Prendre rendez-vous
-        </MyButton>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden ml-auto">
-          <MyButton onClick={() => setIsOpen(!isOpen)} variant="outline" className="p-2">
-            {isOpen ? <Icon name="X" className="h-6 w-6" /> : <Icon name="Menu" className="h-6 w-6" />}
-          </MyButton>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg py-4">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href="#"
-              onClick={() => {
-                setCurrentPage(item.page);
-                setIsOpen(false);
-              }}
-              className="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#AD9452] transition duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
-};
-export default Navbarlogo;

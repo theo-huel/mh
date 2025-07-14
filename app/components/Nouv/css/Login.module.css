@@ -1,0 +1,106 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-height: 100%;
+    margin: 0;
+    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60%;
+    padding-bottom: 30%;
+    margin-top: 20px; /* Fixe le logo et le titre en haut */
+}
+
+.logo {
+    width: 80px; /* Ajuste la taille du logo */
+}
+
+.title {
+    text-align: center;
+    color: #333;
+    margin: 10px 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px; /* Ajuste la largeur du formulaire */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.input {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+li{
+    list-style: none;
+    color: black;
+}
+
+.dede
+{
+    text-align: center;
+    color: goldenrod;
+    display: block;       /* Important pour que le lien prenne toute la ligne */
+}
+
+.dede:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+.dede:hover
+{
+    text-decoration: grey underline;
+    color: grey;
+}
+.dede1
+{
+    margin-top: 10px;  /* Ajuste la valeur selon l'espace souhaité */
+
+    text-align: center;
+    color: goldenrod;
+    display: block;       /* Important pour que le lien prenne toute la ligne */
+    margin-bottom: 6px;  /* Ajuste la valeur selon l'espace souhaité */
+}
+
+.dede1:active
+{
+    text-decoration: none;
+    color: black;
+}
+
+.dede1:hover
+{
+    text-decoration: grey underline;
+    color: grey;
+}
