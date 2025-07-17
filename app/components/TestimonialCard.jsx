@@ -34,10 +34,10 @@ const TestimonialCard = ({ quote, author, title, imageSrc }) => (
     <img
       src={imageSrc}
       alt={`Photo de ${author}`}
-      className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-indigo-200"
+      className="w-24 h-24 rounded-full object-cover mb-6 border-4 border-[#AD9551]"
       onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/96x96/E0E7FF/4F46E5?text=Client"; }}
     />
-    <Icon name="Quote" className="w-10 h-10 text-indigo-500 mb-4" />
+    <Icon name="Quote" className="w-10 h-10 text-[#AD9551 mb-4" />
     <p className="text-gray-700 italic mb-4 text-lg">"{quote}"</p>
     <p className="font-bold text-gray-900">{author}</p>
     <p className="text-gray-500 text-sm">{title}</p>

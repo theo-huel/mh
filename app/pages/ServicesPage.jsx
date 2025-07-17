@@ -1,6 +1,11 @@
+import MonBouton from '../components/Nouv/MonBouton.jsx'
+//import MyBouton from './components/MyButton.jsx'
+//import Navbarlogo from './components/NavBarLogo.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
+import HeroSection from '../components/HeroSection.jsx'
 
-import MyButton from './MyButton.jsx'
-import btn from '../css/MonBouton.module.css';
+import SectionTitle from '../components/SectionTitle.jsx'
+import TestimonialCard from '../components/TestimonialCard.jsx'
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -27,20 +32,57 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
-// Composant CallToAction
-const CallToAction = ({ setCurrentPage }) => (
-  <section className="bg-[#AD9551] text-white py-20 rounded-xl mx-auto max-w-6xl my-20 shadow-xl">
-    <div className="container mx-auto px-6 text-center">
-      <h2 className="text-4xl font-extrabold mb-4">Prêt à propulser votre entreprise ?</h2>
-      <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-        Que ce soit pour un site web, une identité visuelle forte ou une meilleure gestion, MH Business est là pour vous.
-      </p>
-      <MyButton onClick={() => setCurrentPage('contact')} className="bg-[#AD9551] text-white">
-        Contactez-moi dès aujourd'hui !
-      </MyButton>
-    </div>
-  </section>
+
+
+
+// Page Services
+const ServicesPage = () => (
+  <main className="pt-20 bg-gray-50">
+    <section className="py-16 container mx-auto px-6">
+      <SectionTitle
+        title="Mes Services d'Accompagnement"
+        subtitle="Une expertise complète pour chaque étape de votre développement."
+      />
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard
+          iconName="Globe"
+          title="Création & Refonte de Sites Web"
+          description="Développement de sites vitrine, e-commerce ou applications web sur mesure. Design moderne, responsive et optimisation SEO. Utilisation des dernières technologies comme Next.js, React et Tailwind CSS."
+        />
+        <ServiceCard
+          iconName="Printer"
+          title="Identité Visuelle & Supports Imprimés"
+          description="Création de votre logo, charte graphique complète, cartes de visite, flyers, brochures, et gestion de l'impression de vos supports de communication."
+        />
+        <ServiceCard
+          iconName="BookOpen"
+          title="Gestion Administrative & Comptable"
+          description="Mise en place de processus administratifs efficaces, aide à la facturation, suivi des paiements, et mise en relation avec des experts-comptables pour une gestion financière sereine."
+        />
+        <ServiceCard
+          iconName="Lightbulb"
+          title="Conseil en Stratégie Digitale"
+          description="Audit de votre présence en ligne, conseils pour votre stratégie de contenu, gestion des réseaux sociaux et optimisation de votre visibilité sur internet."
+        />
+        <ServiceCard
+          iconName="Users"
+          title="Accompagnement Commercial & Marketing"
+          description="Définition de votre proposition de valeur, aide à la prospection, optimisation de vos argumentaires de vente et mise en place d'actions marketing ciblées."
+        />
+        <ServiceCard
+          iconName="Briefcase"
+          title="Conseil Généraliste & Stratégique"
+          description="Un regard extérieur pour vous aider à prendre les bonnes décisions, structurer vos projets, et surmonter les défis du quotidien entrepreneurial."
+        />
+      </div>
+      <div className="text-center mt-12 text-gray-700 text-lg">
+        <p>
+          Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.
+        </p>
+      </div>
+    </section>
+  </main>
 );
-export default CallToAction;
 
 
+export default ServicesPage;

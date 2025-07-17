@@ -23,12 +23,12 @@ const Icon = ({ name, className }) => {
   const SpecificIcon = icons[name];
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
-//<section className="relative bg-gradient-to-r from-[#AD9452] to-[#8A7641] text-white py-24 md:py-32 overflow-hidden">
+//<section className="relative bg-gradient-to-r from-[#AD9551] to-[#8A7641] text-white py-24 md:py-32 overflow-hidden">
 
 // Composant ServiceCard
 const ServiceCard = ({ iconName, title, description }) => (
   <div className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border border-gray-100">
-    <div className="text-[#AD9452] mb-6 text-5xl flex justify-center">
+    <div className="text-[#AD9551] mb-6 text-5xl flex justify-center">
       <Icon name={iconName} className="w-16 h-16" />
     </div>
     <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">{title}</h3>

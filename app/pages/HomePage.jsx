@@ -1,5 +1,5 @@
-import MonBouton from '../components/Nouv/MonBouton.jsx'
-//import MyBouton from './components/MyButton.jsx'
+import MyBouton from '../components/Nouv/MonBouton.jsx'
+import MonBouton from '../components/MyButton.jsx'
 //import Navbarlogo from './components/NavBarLogo.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import HeroSection from '../components/HeroSection.jsx'
@@ -87,7 +87,7 @@ const HomePage = ({ setCurrentPage }) => (
     </section>
 
     {/* Section Pourquoi choisir MH Business ? */}
-    <section className="py-16 bg-indigo-50">
+    <section className="py-16 bg-[#AD9551]-50">
       <div className="container mx-auto px-6">
         <SectionTitle
           title="Pourquoi choisir MH Business ?"
@@ -145,19 +145,19 @@ const HomePage = ({ setCurrentPage }) => (
             quote="MH Business a transformé ma présence en ligne. Mon nouveau site est magnifique et attire plus de clients que jamais !"
             author="Sophie D."
             title="Fondatrice, 'Les Délices de Sophie'"
-            imageSrc="https://placehold.co/96x96/E0E7FF/4F46E5?text=SD"
+            imageSrc="https://placehold.co/96x96/AD9551/FFFFFF?text=SD"
           />
           <TestimonialCard
             quote="Grâce à l'accompagnement de MH Business, la gestion administrative de mon entreprise est enfin fluide. Un vrai soulagement !"
             author="Marc L."
             title="Gérant, 'Solutions BTP'"
-            imageSrc="https://placehold.co/96x96/E0E7FF/4F46E5?text=ML"
+            imageSrc="https://placehold.co/96x96/FFFFFF/AD9551?text=ML"
           />
           <TestimonialCard
             quote="Le conseil stratégique de MH Business a été crucial pour le lancement de ma marque. Je recommande vivement !"
             author="Clara V."
             title="Créatrice, 'Atelier Clara'"
-            imageSrc="https://placehold.co/96x96/E0E7FF/4F46E5?text=CV"
+            imageSrc="https://placehold.co/96x96/AD9551/00000?text=CV"
           />
         </div>
       </div>

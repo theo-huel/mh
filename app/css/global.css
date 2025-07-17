@@ -1,0 +1,14 @@
+
+.text-outline-rounded {
+  color: transparent; /* Make the text itself transparent */
+  text-shadow:
+    2px 2px 0 white,
+    -2px -2px 0 white,
+    2px -2px 0 white,
+    -2px 2px 0 white,
+    0 2px 0 white,
+    0 -2px 0 white,
+    2px 0 0 white,
+    -2px 0 0 white; /* Adjust color and spread as needed */
+  /* You can increase the pixel values for a thicker "outline" */
+}

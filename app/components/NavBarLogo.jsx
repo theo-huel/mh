@@ -42,7 +42,7 @@ const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc
     <nav className="bg-white shadow-md fixed w-full z-50 top-0 my-0">
       <div className="container mx-auto px-6 py-4 flex items-center ">
         {/* Logo ou Texte MH Business */}
-        <div className="flex items-center cursor-pointer" onClick={() => setCurrentPage('home')}>
+        <div className="flex items-center cursor-pointer ml-30" onClick={() => setCurrentPage('home')}>
           <Image
             src="/MHlogo.svg" // Utilise l'import de ton logo ici
             alt="Logo MH Business"
@@ -52,6 +52,7 @@ const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc
             priority // Pour charger le logo en priorité (important pour le LCP)
           />
         </div>
+        
         {/* Desktop Navigation */}
         <div className="hidden md:flex flex-grow justify-center space-x-8">
           {navItems.map((item) => (
@@ -59,7 +60,7 @@ const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc
               key={item.name}
               href="#"
               onClick={() => setCurrentPage(item.page)}
-              className="text-gray-700 hover:text-[#AD9452] font-medium transition duration-300"
+              className="text-gray-700 hover:text-[#AD9551] font-medium transition duration-300"
             >
               {item.name}
             </a>
@@ -69,7 +70,7 @@ const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc
       
         {/* Bouton Prendre rdv */}
         <div className="hidden md:flex ml-auto">
-          <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" >
+          <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" className='w-50'>
           Prendre rendez-vous
         </MyButton>
         </div>
@@ -93,7 +94,7 @@ const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc
                 setCurrentPage(item.page);
                 setIsOpen(false);
               }}
-              className="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#AD9452] transition duration-300"
+              className="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#AD9551] transition duration-300"
             >
               {item.name}
             </a>

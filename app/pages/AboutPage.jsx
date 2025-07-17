@@ -1,6 +1,11 @@
+import MonBouton from '../components/Nouv/MonBouton.jsx'
+//import MyBouton from './components/MyButton.jsx'
+//import Navbarlogo from './components/NavBarLogo.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
+import HeroSection from '../components/HeroSection.jsx'
 
-import MyButton from './MyButton.jsx'
-import btn from '../css/MonBouton.module.css';
+import SectionTitle from '../components/SectionTitle.jsx'
+import TestimonialCard from '../components/TestimonialCard.jsx'
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -27,20 +32,62 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
-// Composant CallToAction
-const CallToAction = ({ setCurrentPage }) => (
-  <section className="bg-[#AD9551] text-white py-20 rounded-xl mx-auto max-w-6xl my-20 shadow-xl">
-    <div className="container mx-auto px-6 text-center">
-      <h2 className="text-4xl font-extrabold mb-4">Prêt à propulser votre entreprise ?</h2>
-      <p className="text-xl opacity-90 mb-8 max-w-3xl mx-auto">
-        Que ce soit pour un site web, une identité visuelle forte ou une meilleure gestion, MH Business est là pour vous.
-      </p>
-      <MyButton onClick={() => setCurrentPage('contact')} className="bg-[#AD9551] text-white">
-        Contactez-moi dès aujourd'hui !
-      </MyButton>
-    </div>
-  </section>
+
+// Page À Propos
+const AboutPage = () => (
+  <main className="pt-20 bg-gray-50">
+    <section className="py-16 container mx-auto px-6">
+      <SectionTitle
+        title="À Propos de MH Business"
+        subtitle="Mon parcours, ma philosophie, mon engagement."
+      />
+      <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
+        <div className="flex flex-col md:flex-row items-center md:items-start mb-10">
+          <img
+            src="https://placehold.co/200x200/white/[#AD9551]?text=Votre+Photo"
+            alt="Photo du consultant MH Business"
+            className="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-8 border-4 border-[#AD9551]"
+            onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/200x200/AD9452/AD9452?text=Votre+Photo"; }}
+          />
+          <div>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center md:text-left">Mon Histoire et ma Mission</h3>
+            <p className="text-gray-700 text-lg leading-relaxed">
+              Après plusieurs années d'expérience dans divers domaines liés à l'entrepreneuriat (développement web, marketing digital, gestion de projet), j'ai constaté un besoin récurrent chez les petites et moyennes entreprises : un accompagnement global et pragmatique. C'est ainsi qu'est né MH Business. Ma mission est de simplifier la vie des entrepreneurs en leur fournissant les outils et les compétences nécessaires pour se concentrer sur ce qu'ils font de mieux : développer leur activité.
+            </p>
+          </div>
+        </div>
+
+        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Ma Philosophie de Travail</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <div className="bg-indigo-50 p-6 rounded-lg">
+            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Lightbulb" className="w-6 h-6 mr-2" /> Écoute & Compréhension</h4>
+            <p className="text-gray-700">Je prends le temps de comprendre vos défis, vos objectifs et votre vision pour proposer des solutions sur mesure.</p>
+          </div>
+          <div className="bg-indigo-50 p-6 rounded-lg">
+            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="CheckCircle" className="w-6 h-6 mr-2" /> Pragmatisme & Efficacité</h4>
+            <p className="text-gray-700">Mes actions sont orientées résultats, avec des solutions concrètes et rapidement applicables.</p>
+          </div>
+          <div className="bg-indigo-50 p-6 rounded-lg">
+            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Users" className="w-6 h-6 mr-2" /> Transparence & Confiance</h4>
+            <p className="text-gray-700">Une communication claire et honnête est la base d'une collaboration réussie.</p>
+          </div>
+          <div className="bg-indigo-50 p-6 rounded-lg">
+            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Briefcase" className="w-6 h-6 mr-2" /> Réseau & Partenariats</h4>
+            <p className="text-gray-700">Je m'appuie sur un réseau de professionnels de confiance pour compléter mon expertise quand nécessaire.</p>
+          </div>
+        </div>
+
+        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Mon Réseau et Ma Vision</h3>
+        <p className="text-gray-700 text-lg leading-relaxed mb-8">
+          Je crois fermement en la force du collectif. C'est pourquoi, pour certains besoins spécifiques qui dépassent mon champ d'action direct, je n'hésite pas à vous mettre en relation avec des partenaires fiables et reconnus dans leur domaine (experts-comptables, graphistes spécialisés, imprimeurs, etc.). Mon objectif est toujours de vous apporter la meilleure solution, qu'elle vienne de moi ou de mon réseau.
+        </p>
+        <p className="text-gray-700 text-lg leading-relaxed">
+          Ma vision pour MH Business est de devenir le point de contact privilégié des entrepreneurs cherchant un accompagnement global et personnalisé. Je veux que chaque client se sente soutenu, compris et équipé pour faire face aux défis du monde des affaires.
+        </p>
+      </div>
+    </section>
+  </main>
 );
-export default CallToAction;
 
 
+export default AboutPage;

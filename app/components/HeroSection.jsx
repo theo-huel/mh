@@ -31,27 +31,30 @@ const Icon = ({ name, className }) => {
 
 // Composant HeroSection
 const HeroSection = ({ setCurrentPage }) => (
-<section className="relative bg-gradient-to-r from-[#AD9452] to-[#8A7641] text-white py-24 md:py-32 overflow-hidden">
+<section className="relative bg-gradient-to-r from-[#AD9551] to-[#AD9551] text-white py-24 md:py-32 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
       {/* Placeholder image for background */}
-      <img
+      {/* <img
         src="https://placehold.co/1920x1080/4F46E5/FFFFFF?text=MH+Business"
         alt="Arrière-plan abstrait"
-        className="w-full h-full object-contain"
+        className="w-full h-full object-cover"
         onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1920x1080/4F46E5/FFFFFF?text=Image+de+fond"; }}
-      />
+      /> */}
     </div>
     <div className="container mx-auto px-6 relative z-10 text-center">
-      <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 animate-fade-in-up">
-        MH Business : Votre partenaire pour concrétiser vos ambitions
+      <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-0 animate-fade-in-up">
+        MH Business
       </h1>
-      <p className="text-lg md:text-xl mb-10 max-w-3xl mx-auto opacity-90 animate-fade-in-up delay-200">
+      <h2 className="text-1xl md:text-3xl font-bold leading-tight mb-15 animate-fade-in-up">
+      Votre partenaire pour concrétiser vos ambitions      
+      </h2>
+      <p className="text-lg md:text-xl mb-10 max-w-7xl mx-auto opacity-90 animate-fade-in-up delay-200">
         Nous accompagnons les entrepreneurs à chaque étape, de la création de leur présence en ligne à la gestion administrative, pour une croissance sereine et efficace.
       </p>
       <div >
         <MonBouton onClick={() => setCurrentPage('services')} variant="primary" ClassName={btn.boutonLogin}>
           Découvrir mes services <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
-        </MonBouton>
+        </MonBouton> 
         <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" >
           Prendre rendez-vous
         </MyButton>
