@@ -32,7 +32,7 @@ export async function POST(request) {
     const adminMailOptions = {
       from: process.env.EMAIL_USER,
       to: process.env.ADMIN_EMAIL,
-      subject: `Nouveau message de contact : ${subject}`,
+      subject: `Nouveau message | Sujet : ${subject}`,
       html: `
         <p><strong>Nom:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
