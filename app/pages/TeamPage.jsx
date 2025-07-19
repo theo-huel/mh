@@ -1,7 +1,7 @@
 import MonBouton from '../components/Nouv/MonBouton.jsx'
 //import MyBouton from './components/MyButton.jsx'
 //import Navbarlogo from './components/NavBarLogo.jsx'
-import ServiceCard from '../components/ServiceCard.jsx'
+import TeamCard from '../components/TeamCard.jsx'
 import HeroSection from '../components/HeroSection.jsx'
 
 import SectionTitle from '../components/SectionTitle.jsx'
@@ -32,48 +32,35 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
-
+const members = [
+    {
+      name: "Huel Matis",
+      position: "PDG",
+      imageSrc: "/img/imgMatis.jpg",
+      description: "Matis le bg gère ca depuis 6 mois en plus d'etre en maladie à cause de fdp",
+    },
+    {
+      name: "Lucas Dubois",
+      position: "Chef de Projet",
+      imageSrc: "/img/imgPietroGolf.jpg",
+      description: "Lucas supervise les projets clients de A à Z. Il est expert en gestion agile et en planification stratégique.",
+    },
+    // Ajoutez d'autres membres ici
+  ];
 
 
 // Page Services
 const TeamPage = () => (
-  <main className="pt-20 bg-gray-50">
+  <main className="pt-10 bg-gray-50">
     <section className="py-16 container mx-auto px-6">
       <SectionTitle
         title="Notre Équipe"
         subtitle="Une expertise complète pour chaque étape de votre développement."
       />
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ServiceCard
-          iconName="Globe"
-          title="Création & Refonte de Sites Web"
-          description="Développement de sites vitrine, e-commerce ou applications web sur mesure. Design moderne, responsive et optimisation SEO. Utilisation des dernières technologies comme Next.js, React et Tailwind CSS."
-        />
-        <ServiceCard
-          iconName="Printer"
-          title="Identité Visuelle & Supports Imprimés"
-          description="Création de votre logo, charte graphique complète, cartes de visite, flyers, brochures, et gestion de l'impression de vos supports de communication."
-        />
-        <ServiceCard
-          iconName="BookOpen"
-          title="Gestion Administrative & Comptable"
-          description="Mise en place de processus administratifs efficaces, aide à la facturation, suivi des paiements, et mise en relation avec des experts-comptables pour une gestion financière sereine."
-        />
-        <ServiceCard
-          iconName="Lightbulb"
-          title="Conseil en Stratégie Digitale"
-          description="Audit de votre présence en ligne, conseils pour votre stratégie de contenu, gestion des réseaux sociaux et optimisation de votre visibilité sur internet."
-        />
-        <ServiceCard
-          iconName="Users"
-          title="Accompagnement Commercial & Marketing"
-          description="Définition de votre proposition de valeur, aide à la prospection, optimisation de vos argumentaires de vente et mise en place d'actions marketing ciblées."
-        />
-        <ServiceCard
-          iconName="Briefcase"
-          title="Conseil Généraliste & Stratégique"
-          description="Un regard extérieur pour vous aider à prendre les bonnes décisions, structurer vos projets, et surmonter les défis du quotidien entrepreneurial."
-        />
+    <div className="flex flex-wrap justify-center gap-8">
+        {members.map((member, index) => (
+            <TeamCard key={index} {...member} />
+          ))}
       </div>
       <div className="text-center mt-12 text-gray-700 text-lg">
         <p>

@@ -31,36 +31,32 @@ const Icon = ({ name, className }) => {
 
 // Composant HeroSection
 const HeroSection = ({ setCurrentPage }) => (
-<section className="relative bg-gradient-to-r from-[#AD9551] to-[#AD9551] text-white py-24 md:py-32 overflow-hidden">
-        <div className="absolute inset-0 z-0 opacity-20">
-      {/* Placeholder image for background */}
-      {/* <img
-        src="https://placehold.co/1920x1080/4F46E5/FFFFFF?text=MH+Business"
-        alt="Arrière-plan abstrait"
-        className="w-full h-full object-cover"
-        onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/1920x1080/4F46E5/FFFFFF?text=Image+de+fond"; }}
-      /> */}
-    </div>
-    <div className="container mx-auto px-6 relative z-10 text-center">
-      {/* <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-0 animate-fade-in-up">
 
-      </h1> */}
-      <h2 className="text-1xl md:text-3xl font-bold leading-tight mt-20 mb-15 animate-fade-in-up">
-                 « MH Business, quand la stratégie devient action »
 
-      </h2>
-      {/* <p className="text-lg md:text-xl mb-10 max-w-7xl mx-auto opacity-90 animate-fade-in-up delay-200">
-        Nous accompagnons les entrepreneurs à chaque étape, de la création de leur présence en ligne à la gestion administrative, pour une croissance sereine et efficace.
-      </p> */}
-      <div >
+  <section className="relative bg-gradient-to-r from-[#AD9551] to-[#AD9551] text-white py-24 md:py-32 overflow-hidden">
+  <div className="absolute inset-0 z-0 opacity-20">
+    {/* Background image if needed */}
+  </div>
+
+  {/* ⬇️ CENTRAGE VERTICAL & HORIZONTAL ⬇️ */}
+  <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center items-center text-center min-h-[10vh]">
+    <h2
+      className="text-2xl md:text-4xl leading-tight mb-6 animate-fade-in-up"
+      style={{ fontFamily: 'Times New Roman, serif' }}
+    >
+      « MH Business, quand la stratégie devient action »
+    </h2>
+
+    <div >
         <MonBouton onClick={() => setCurrentPage('services')} variant="primary" ClassName={btn.boutonLogin}>
-          Découvrir mes services <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
+          Découvrir mes services<Icon name="ChevronRight" className="inline-block ml-0 w-5 h-5" />
         </MonBouton> 
         <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" >
           Prendre rendez-vous
         </MyButton>
       </div>
-    </div>
-  </section>
+  </div>
+</section>
+
 );
 export default HeroSection;

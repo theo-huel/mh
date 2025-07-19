@@ -86,7 +86,7 @@ const ContactPage = () => {
 
 
   return (
-    <main className="pt-20 bg-gray-50">
+    <main className="pt-10 bg-gray-50">
       <section className="py-16 container mx-auto px-6">
         <SectionTitle
           title="Contactez MH Business"

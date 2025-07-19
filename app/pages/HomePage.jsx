@@ -66,17 +66,17 @@ const HomePage = ({ setCurrentPage }) => (
             iconName="Globe"
             title="Création de Sites Web"
             description="Conception et développement de sites web modernes, performants et optimisés pour le référencement, avec Next.js, React et Tailwind CSS."
-          />
+            onClick={() => setCurrentPage("services")}          />
           <ServiceCard
             iconName="Printer"
             title="Identité Visuelle & Impression"
             description="Création de logos, chartes graphiques et gestion de l'impression de vos supports (cartes de visite, flyers, enseignes)."
-          />
+          onClick={() => setCurrentPage("services")}          />
           <ServiceCard
             iconName="BookOpen"
             title="Gestion Administrative & Comptable"
             description="Aide à l'organisation administrative, mise en place de processus et mise en relation avec des experts-comptables."
-          />
+            onClick={() => setCurrentPage("services")}          />
         </div>
         <div className="text-center mt-12">
           <MonBouton onClick={() => setCurrentPage('services')} variant="outline">

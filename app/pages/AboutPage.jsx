@@ -3,6 +3,7 @@ import MonBouton from '../components/Nouv/MonBouton.jsx'
 //import Navbarlogo from './components/NavBarLogo.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import HeroSection from '../components/HeroSection.jsx'
+import InteractiveWord from '../components/InteractiveWord.jsx'
 
 import SectionTitle from '../components/SectionTitle.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
@@ -35,7 +36,7 @@ const Icon = ({ name, className }) => {
 
 // Page À Propos
 const AboutPage = () => (
-  <main className="pt-20 bg-gray-50">
+  <main className="pt-10 bg-gray-50">
     <section className="py-16 container mx-auto px-6">
       <SectionTitle
         title="À Propos de MH Business"
@@ -85,20 +86,7 @@ Nous croyons qu’un bon conseil ne se limite pas à un rapport, mais se vit sur
         <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Valeurs</h3>
         <p className="text-gray-700 text-lg leading-relaxed mb-8">
         </p>
-        <p className="text-gray-700 text-lg leading-relaxed">
-MH BUSINESS<br/>
-
-M – Méthode : Des outils concrets pour structurer et agir.<br/>
-H – Humain : L’accompagnement commence par l’écoute et la confiance.<br/>
-
-B – Business-oriented : Chaque action vise la performance et la croissance.<br/>
-U – Utilité : Des conseils réellement applicables, pensés pour le terrain.<br/>
-S – Stratégie : On ne laisse rien au hasard, tout part d’une vision claire.<br/>
-I – Impact : Ce qui compte, ce sont les résultats durables.<br/>
-N – Network : Un réseau solide pour multiplier les opportunités.<br/>
-E – Engagement : Présents à chaque étape, pour aller au bout ensemble.<br/>
-S – Simplicité : Rendre accessible ce qui paraît complexe.<br/>
-S – Souplesse : S’adapter à chaque entreprise, chaque réalité.    <br/>    </p>
+        <InteractiveWord/>
       </div>
     </section>
   </main>

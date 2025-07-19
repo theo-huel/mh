@@ -83,7 +83,7 @@ export default function App() {
   };
 
   return (
-    <div className="font-sans antialiased text-gray-900">
+    <div className="font-sans antialiased text-gray-900 pt-19">
       <style>
         {`
           @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
