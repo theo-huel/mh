@@ -1,17 +1,13 @@
-import MonBouton from '../components/Nouv/MonBouton.jsx'
-//import MyBouton from './components/MyButton.jsx'
-//import Navbarlogo from './components/NavBarLogo.jsx'
-import ServiceCard from '../components/ServiceCard.jsx'
-import HeroSection from '../components/HeroSection.jsx'
+import React, { useState } from 'react'; // Import useState
+import MonBouton from '../components/Nouv/MonBouton.jsx';
+import ServiceCard from '../components/ServiceCard.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import SectionTitle from '../components/SectionTitle.jsx';
+import TestimonialCard from '../components/TestimonialCard.jsx';
 
-import SectionTitle from '../components/SectionTitle.jsx'
-import TestimonialCard from '../components/TestimonialCard.jsx'
-
+// Assuming your Icon component is defined elsewhere or above this component.
+// If it's in the same file, you don't need to re-import it.
 const Icon = ({ name, className }) => {
-  // Une implémentation simple pour afficher un caractère ou un SVG si possible,
-  // ou un fallback si l'icône n'est pas directement disponible.
-  // Dans un vrai projet React/Next.js, vous importeriez les icônes de 'lucide-react'
-  // et utiliseriez <Home className={className} /> etc.
   const icons = {
     Home: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
     Info: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>,
@@ -32,57 +28,105 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
-
-
-
 // Page Services
-const ServicesPage = () => (
-  <main className="pt-20 bg-gray-50">
-    <section className="py-16 container mx-auto px-6">
-      <SectionTitle
-        title="Mes Services d'Accompagnement"
-        subtitle="Une expertise complète pour chaque étape de votre développement."
-      />
-      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <ServiceCard
-          iconName="Globe"
-          title="Création & Refonte de Sites Web"
-          description="Développement de sites vitrine, e-commerce ou applications web sur mesure. Design moderne, responsive et optimisation SEO. Utilisation des dernières technologies comme Next.js, React et Tailwind CSS."
-        />
-        <ServiceCard
-          iconName="Printer"
-          title="Identité Visuelle & Supports Imprimés"
-          description="Création de votre logo, charte graphique complète, cartes de visite, flyers, brochures, et gestion de l'impression de vos supports de communication."
-        />
-        <ServiceCard
-          iconName="BookOpen"
-          title="Gestion Administrative & Comptable"
-          description="Mise en place de processus administratifs efficaces, aide à la facturation, suivi des paiements, et mise en relation avec des experts-comptables pour une gestion financière sereine."
-        />
-        <ServiceCard
-          iconName="Lightbulb"
-          title="Conseil en Stratégie Digitale"
-          description="Audit de votre présence en ligne, conseils pour votre stratégie de contenu, gestion des réseaux sociaux et optimisation de votre visibilité sur internet."
-        />
-        <ServiceCard
-          iconName="Users"
-          title="Accompagnement Commercial & Marketing"
-          description="Définition de votre proposition de valeur, aide à la prospection, optimisation de vos argumentaires de vente et mise en place d'actions marketing ciblées."
-        />
-        <ServiceCard
-          iconName="Briefcase"
-          title="Conseil Généraliste & Stratégique"
-          description="Un regard extérieur pour vous aider à prendre les bonnes décisions, structurer vos projets, et surmonter les défis du quotidien entrepreneurial."
-        />
-      </div>
-      <div className="text-center mt-12 text-gray-700 text-lg">
-        <p>
-          Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.
-        </p>
-      </div>
-    </section>
-  </main>
-);
+const ServicesPage = () => {
+  // State to track which card is currently open
+  // We'll store the 'title' of the open card, or null if none are open.
+  const [openCardTitle, setOpenCardTitle] = useState(null);
 
+  // Function to handle card clicks
+  const handleCardClick = (title) => {
+    // If the clicked card is already open, close it.
+    // Otherwise, open the clicked card.
+    setOpenCardTitle(openCardTitle === title ? null : title);
+  };
+
+  const serviceData = [
+    {
+      iconName: "Globe",
+      title: "Stratégie d’entreprise & Structuration",
+      subtitle: "Développez votre vision.", // Added a subtitle for consistent display
+      description: `
+        • Diagnostic stratégique (SWOT, Business Model Canvas, etc.)
+        • Clarification de la vision, de la mission et des objectifs
+        • Structuration de l’offre, de l’organisation interne et des priorités
+        • Mise en place de KPIs et d’un plan d’action
+      `,
+    },
+    {
+      iconName: "Users",
+      title: "Développement commercial B2B",
+      subtitle: "Augmentez vos ventes.",
+      description: `
+        • Création ou optimisation de la stratégie commerciale
+        • Définition des personas cibles
+        • Construction d’un tunnel d’acquisition
+        • Outils d’aide à la vente, pitch, formation des équipes
+        • Mise en place de partenariats stratégiques
+      `,
+    },
+    {
+      iconName: "Briefcase",
+      title: "Accompagnement opérationnel & Coaching",
+      subtitle: "Optimisez votre quotidien.",
+      description: `
+        • Accompagnement mensuel ou ponctuel en tant que “sparring partner”
+        • Suivi d’indicateurs, reporting, ajustements
+        • Coaching de dirigeant ou d’équipe commerciale
+      `,
+    },
+    {
+      iconName: "Lightbulb",
+      title: "Mise en relation & réseau professionnel",
+      subtitle: "Élargissez vos connexions.",
+      description: `
+        • Mise en lien avec des commerciaux indépendants, experts ou prestataires
+        • Sourcing de stagiaires et jeunes talents (en marketing, finance, RH…)
+        • Mise en relation pour projets spécifiques (vente, achat, partenariat)
+      `,
+    },
+    {
+      iconName: "Users",
+      title: "Formations & Ateliers stratégiques",
+      subtitle: "Montez en compétences.",
+      description: `
+        • Ateliers sur-mesure (stratégie, business model, prospection, gestion…)
+        • Formations à la vente B2B
+        • Séminaires pour dirigeants ou commerciaux
+      `,
+    },
+  ];
+
+  return (
+    <main className="pt-20 bg-gray-50">
+      <section className="py-16 container mx-auto px-6">
+        <SectionTitle
+          title="Nos Services d'Accompagnement"
+          subtitle="Une expertise complète pour chaque étape de votre développement."
+        />
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {serviceData.map((service) => (
+            <ServiceCard
+              key={service.title} // Use a unique key for each card
+              iconName={service.iconName}
+              title={service.title}
+              subtitle={service.subtitle}
+              description={service.description}
+              // Pass a boolean prop to ServiceCard indicating if it should be open
+              isOpen={openCardTitle === service.title}
+              // Pass the click handler down to ServiceCard
+              onClick={() => handleCardClick(service.title)}
+            />
+          ))}
+        </div>
+        <div className="text-center mt-12 text-gray-700 text-lg">
+          <p>
+            Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.
+          </p>
+        </div>
+      </section>
+    </main>
+  );
+};
 
 export default ServicesPage;

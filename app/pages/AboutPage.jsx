@@ -39,27 +39,31 @@ const AboutPage = () => (
     <section className="py-16 container mx-auto px-6">
       <SectionTitle
         title="À Propos de MH Business"
-        subtitle="Mon parcours, ma philosophie, mon engagement."
+        subtitle="MH Business accompagne les entrepreneurs et les PME dans leur développement stratégique et commercial."
       />
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center md:items-start mb-10">
-          <img
+          {/* <img
             src="https://placehold.co/200x200/white/[#AD9551]?text=Votre+Photo"
             alt="Photo du consultant MH Business"
             className="w-48 h-48 rounded-full object-cover mb-6 md:mb-0 md:mr-8 border-4 border-[#AD9551]"
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/200x200/AD9452/AD9452?text=Votre+Photo"; }}
-          />
+          /> */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center md:text-left">Mon Histoire et ma Mission</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">Mission</h3>
             <p className="text-gray-700 text-lg leading-relaxed">
-              Après plusieurs années d'expérience dans divers domaines liés à l'entrepreneuriat (développement web, marketing digital, gestion de projet), j'ai constaté un besoin récurrent chez les petites et moyennes entreprises : un accompagnement global et pragmatique. C'est ainsi qu'est né MH Business. Ma mission est de simplifier la vie des entrepreneurs en leur fournissant les outils et les compétences nécessaires pour se concentrer sur ce qu'ils font de mieux : développer leur activité.
-            </p>
+             Accompagner les entrepreneurs et les PME dans leur structuration, leur développement commercial et leur croissance stratégique.
+              Nous transformons les idées en plans concrets et les stratégies en actions, grâce à une approche personnalisée, humaine et orientée résultats.
+             </p>
           </div>
         </div>
 
-        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Ma Philosophie de Travail</h3>
+        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Vision</h3>
+        
+          <p>Créer un écosystème de croissance agile, où les entreprises, les indépendants et les talents collaborent pour générer un impact durable.
+Nous croyons qu’un bon conseil ne se limite pas à un rapport, mais se vit sur le terrain, au plus près des réalités business.</p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          <div className="bg-indigo-50 p-6 rounded-lg">
+          {/* <div className="bg-indigo-50 p-6 rounded-lg">
             <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Lightbulb" className="w-6 h-6 mr-2" /> Écoute & Compréhension</h4>
             <p className="text-gray-700">Je prends le temps de comprendre vos défis, vos objectifs et votre vision pour proposer des solutions sur mesure.</p>
           </div>
@@ -74,16 +78,27 @@ const AboutPage = () => (
           <div className="bg-indigo-50 p-6 rounded-lg">
             <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Briefcase" className="w-6 h-6 mr-2" /> Réseau & Partenariats</h4>
             <p className="text-gray-700">Je m'appuie sur un réseau de professionnels de confiance pour compléter mon expertise quand nécessaire.</p>
-          </div>
+          </div> */}
+
         </div>
 
-        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Mon Réseau et Ma Vision</h3>
+        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Valeurs</h3>
         <p className="text-gray-700 text-lg leading-relaxed mb-8">
-          Je crois fermement en la force du collectif. C'est pourquoi, pour certains besoins spécifiques qui dépassent mon champ d'action direct, je n'hésite pas à vous mettre en relation avec des partenaires fiables et reconnus dans leur domaine (experts-comptables, graphistes spécialisés, imprimeurs, etc.). Mon objectif est toujours de vous apporter la meilleure solution, qu'elle vienne de moi ou de mon réseau.
         </p>
         <p className="text-gray-700 text-lg leading-relaxed">
-          Ma vision pour MH Business est de devenir le point de contact privilégié des entrepreneurs cherchant un accompagnement global et personnalisé. Je veux que chaque client se sente soutenu, compris et équipé pour faire face aux défis du monde des affaires.
-        </p>
+MH BUSINESS<br/>
+
+M – Méthode : Des outils concrets pour structurer et agir.<br/>
+H – Humain : L’accompagnement commence par l’écoute et la confiance.<br/>
+
+B – Business-oriented : Chaque action vise la performance et la croissance.<br/>
+U – Utilité : Des conseils réellement applicables, pensés pour le terrain.<br/>
+S – Stratégie : On ne laisse rien au hasard, tout part d’une vision claire.<br/>
+I – Impact : Ce qui compte, ce sont les résultats durables.<br/>
+N – Network : Un réseau solide pour multiplier les opportunités.<br/>
+E – Engagement : Présents à chaque étape, pour aller au bout ensemble.<br/>
+S – Simplicité : Rendre accessible ce qui paraît complexe.<br/>
+S – Souplesse : S’adapter à chaque entreprise, chaque réalité.    <br/>    </p>
       </div>
     </section>
   </main>

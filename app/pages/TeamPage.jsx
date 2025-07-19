@@ -1,6 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import MyButton from './MyButton.jsx'
-import Image from 'next/image';
+import MonBouton from '../components/Nouv/MonBouton.jsx'
+//import MyBouton from './components/MyButton.jsx'
+//import Navbarlogo from './components/NavBarLogo.jsx'
+import ServiceCard from '../components/ServiceCard.jsx'
+import HeroSection from '../components/HeroSection.jsx'
+
+import SectionTitle from '../components/SectionTitle.jsx'
+import TestimonialCard from '../components/TestimonialCard.jsx'
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -27,82 +32,57 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
-// Composant Navbar
-const Navbarlogo = ({ setCurrentPage, logoSrc = null }) => { // Ajout de logoSrc en prop
-  const [isOpen, setIsOpen] = useState(false);
 
-  const navItems = [
-    { name: 'Accueil', page: 'home' },
-    { name: 'À Propos', page: 'about' },
-    { name: 'Nos Services', page: 'services' },
-    { name: 'Notre Équipe', page: 'equipe' },
-    { name: 'Contact', page: 'contact' },
-  ];
 
-  return (
-    <nav className="bg-white shadow-md fixed w-full z-50 top-0 my-0 ">
-      <div className="container mx-auto px-6 py-1 flex items-center ">
-        {/* Logo ou Texte MH Business */}
-        <div className="flex items-center cursor-pointer ml-4" onClick={() => setCurrentPage('home')}>
-          <Image
-            src="/MHBusiness.svg" // Utilise l'import de ton logo ici
-            alt="Logo MH Business"
-            width={150} // Définis la largeur de ton logo (en pixels)
-            height={60} // Définis la hauteur de ton logo (en pixels)
-            className="rounded-md" // Classes Tailwind pour le style
-            priority // Pour charger le logo en priorité (important pour le LCP)
-          />
-        </div>
-        
-        {/* Desktop Navigation */}
-        <div className="hidden md:flex flex-grow justify-center space-x-8">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href="#"
-              onClick={() => setCurrentPage(item.page)}
-              className="text-gray-700 hover:text-[#AD9551] font-medium transition duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
 
-      
-        {/* Bouton Prendre rdv */}
-        <div className="hidden md:flex ml-auto">
-          <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" className='w-50'>
-          Prendre rendez-vous
-        </MyButton>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <div className="md:hidden ml-auto">
-          <MyButton onClick={() => setIsOpen(!isOpen)} variant="outline" className="p-2">
-            {isOpen ? <Icon name="X" className="h-6 w-6" /> : <Icon name="Menu" className="h-6 w-6" />}
-          </MyButton>
-        </div>
+// Page Services
+const TeamPage = () => (
+  <main className="pt-20 bg-gray-50">
+    <section className="py-16 container mx-auto px-6">
+      <SectionTitle
+        title="Notre Équipe"
+        subtitle="Une expertise complète pour chaque étape de votre développement."
+      />
+      <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <ServiceCard
+          iconName="Globe"
+          title="Création & Refonte de Sites Web"
+          description="Développement de sites vitrine, e-commerce ou applications web sur mesure. Design moderne, responsive et optimisation SEO. Utilisation des dernières technologies comme Next.js, React et Tailwind CSS."
+        />
+        <ServiceCard
+          iconName="Printer"
+          title="Identité Visuelle & Supports Imprimés"
+          description="Création de votre logo, charte graphique complète, cartes de visite, flyers, brochures, et gestion de l'impression de vos supports de communication."
+        />
+        <ServiceCard
+          iconName="BookOpen"
+          title="Gestion Administrative & Comptable"
+          description="Mise en place de processus administratifs efficaces, aide à la facturation, suivi des paiements, et mise en relation avec des experts-comptables pour une gestion financière sereine."
+        />
+        <ServiceCard
+          iconName="Lightbulb"
+          title="Conseil en Stratégie Digitale"
+          description="Audit de votre présence en ligne, conseils pour votre stratégie de contenu, gestion des réseaux sociaux et optimisation de votre visibilité sur internet."
+        />
+        <ServiceCard
+          iconName="Users"
+          title="Accompagnement Commercial & Marketing"
+          description="Définition de votre proposition de valeur, aide à la prospection, optimisation de vos argumentaires de vente et mise en place d'actions marketing ciblées."
+        />
+        <ServiceCard
+          iconName="Briefcase"
+          title="Conseil Généraliste & Stratégique"
+          description="Un regard extérieur pour vous aider à prendre les bonnes décisions, structurer vos projets, et surmonter les défis du quotidien entrepreneurial."
+        />
       </div>
+      <div className="text-center mt-12 text-gray-700 text-lg">
+        <p>
+          Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.
+        </p>
+      </div>
+    </section>
+  </main>
+);
 
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white shadow-lg py-4">
-          {navItems.map((item) => (
-            <a
-              key={item.name}
-              href="#"
-              onClick={() => {
-                setCurrentPage(item.page);
-                setIsOpen(false);
-              }}
-              className="block px-6 py-3 text-gray-700 hover:bg-gray-100 hover:text-[#AD9551] transition duration-300"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
-      )}
-    </nav>
-  );
-};
-export default Navbarlogo;
+
+export default TeamPage;

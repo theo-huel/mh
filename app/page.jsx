@@ -13,6 +13,8 @@ import TestimonialCard from './components/TestimonialCard.jsx'
 import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
+import TeamPage from './pages/TeamPage.jsx'
+
 import ContactPage from './pages/ContactPage.jsx'
 import btn from './css/MonBouton.module.css';
 
@@ -71,6 +73,8 @@ export default function App() {
         return <AboutPage />;
       case 'services':
         return <ServicesPage />;
+        case 'equipe':
+        return <TeamPage />;
       case 'contact':
         return <ContactPage />;
       default:

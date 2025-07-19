@@ -1,9 +1,8 @@
+import React from 'react'; // No need for useState here anymore
 
+// Assuming your Icon component is defined elsewhere and imported, or defined above this component.
+// (The Icon component itself remains unchanged)
 const Icon = ({ name, className }) => {
-  // Une implémentation simple pour afficher un caractère ou un SVG si possible,
-  // ou un fallback si l'icône n'est pas directement disponible.
-  // Dans un vrai projet React/Next.js, vous importeriez les icônes de 'lucide-react'
-  // et utiliseriez <Home className={className} /> etc.
   const icons = {
     Home: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
     Info: (props) => <svg {...props} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>,
@@ -23,16 +22,30 @@ const Icon = ({ name, className }) => {
   const SpecificIcon = icons[name];
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
-//<section className="relative bg-gradient-to-r from-[#AD9551] to-[#8A7641] text-white py-24 md:py-32 overflow-hidden">
 
 // Composant ServiceCard
-const ServiceCard = ({ iconName, title, description }) => (
-  <div className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border border-gray-100">
-    <div className="text-[#AD9551] mb-6 text-5xl flex justify-center">
-      <Icon name={iconName} className="w-16 h-16" />
+// It now receives `isOpen` and `onClick` props
+const ServiceCard = ({ iconName, title, subtitle, description, isOpen, onClick }) => {
+  return (
+    <div
+      className="bg-white rounded-xl shadow-lg p-8 transform hover:scale-105 transition duration-300 ease-in-out border border-gray-100 cursor-pointer"
+      onClick={onClick} // Use the onClick prop passed from the parent
+    >
+      <div className="text-[#AD9551] mb-6 text-5xl flex justify-center">
+        <Icon name={iconName} className="w-16 h-16" />
+      </div>
+      <h3 className="text-2xl font-bold text-gray-900 mb-2 text-center">{title}</h3>
+
+      {/* Conditionally display subtitle or description based on isOpen prop */}
+      {!isOpen && subtitle && (
+        <p className="text-gray-500 text-center mb-4">{subtitle}</p>
+      )}
+
+      {isOpen && (
+        <p className="text-gray-600 text-center mt-4 animate-fade-in">{description}</p>
+      )}
     </div>
-    <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">{title}</h3>
-    <p className="text-gray-600 text-center">{description}</p>
-  </div>
-);
+  );
+};
+
 export default ServiceCard;

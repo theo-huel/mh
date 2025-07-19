@@ -142,10 +142,12 @@ const HomePage = ({ setCurrentPage }) => (
         />
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <TestimonialCard
-            quote="MH Business a transformé ma présence en ligne. Mon nouveau site est magnifique et attire plus de clients que jamais !"
+            quote="Merci à MH Business pour sa disponibilité aux questions et pour son accompagnement 
+            dans la conception du cadre marketing, du ciblage clients et d'une offre tarifiaire opérationnel."
             author="Sophie D."
             title="Fondatrice, 'Les Délices de Sophie'"
-            imageSrc="https://placehold.co/96x96/AD9551/FFFFFF?text=SD"
+            imageSrc="/HVLOGO.jpg"
+            imageSizeClasses="w-10 h-10"
           />
           <TestimonialCard
             quote="Grâce à l'accompagnement de MH Business, la gestion administrative de mon entreprise est enfin fluide. Un vrai soulagement !"

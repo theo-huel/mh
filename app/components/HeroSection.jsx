@@ -42,15 +42,16 @@ const HeroSection = ({ setCurrentPage }) => (
       /> */}
     </div>
     <div className="container mx-auto px-6 relative z-10 text-center">
-      <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-0 animate-fade-in-up">
-        MH Business
-      </h1>
-      <h2 className="text-1xl md:text-3xl font-bold leading-tight mb-15 animate-fade-in-up">
-      Votre partenaire pour concrétiser vos ambitions      
+      {/* <h1 className="text-4xl md:text-7xl font-extrabold leading-tight mb-0 animate-fade-in-up">
+
+      </h1> */}
+      <h2 className="text-1xl md:text-3xl font-bold leading-tight mt-20 mb-15 animate-fade-in-up">
+                 « MH Business, quand la stratégie devient action »
+
       </h2>
-      <p className="text-lg md:text-xl mb-10 max-w-7xl mx-auto opacity-90 animate-fade-in-up delay-200">
+      {/* <p className="text-lg md:text-xl mb-10 max-w-7xl mx-auto opacity-90 animate-fade-in-up delay-200">
         Nous accompagnons les entrepreneurs à chaque étape, de la création de leur présence en ligne à la gestion administrative, pour une croissance sereine et efficace.
-      </p>
+      </p> */}
       <div >
         <MonBouton onClick={() => setCurrentPage('services')} variant="primary" ClassName={btn.boutonLogin}>
           Découvrir mes services <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
