@@ -4,6 +4,7 @@ import MonBouton from '../components/Nouv/MonBouton.jsx'
 import TeamCard from '../components/TeamCard.jsx'
 import HeroSection from '../components/HeroSection.jsx'
 
+
 import SectionTitle from '../components/SectionTitle.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
 
@@ -32,25 +33,42 @@ const Icon = ({ name, className }) => {
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
 
+
 const members = [
     {
       name: "Huel Matis",
       position: "PDG",
       imageSrc: "/img/imgMatis.jpg",
+            imageSrcPopup: "/img/imgMatis.jpg",
+
       description: "Matis le bg gère ca depuis 6 mois en plus d'etre en maladie à cause de fdp",
+      imageStyle: {
+      objectPosition: 'left 15%',
+      objectFit: 'cover',
+      transform: 'scale(1)',
+    },
     },
     {
-      name: "Lucas Dubois",
+      name: "Vadala Pietro",
       position: "Chef de Projet",
-      imageSrc: "/img/imgPietroGolf.jpg",
+      imageSrc: "/img/imgPietro.jpg",
+            imageSrcPopup: "/img/imgPietroGolf.jpg",
       description: "Lucas supervise les projets clients de A à Z. Il est expert en gestion agile et en planification stratégique.",
+      imageStyle: {
+      objectPosition: 'left 20%',
+      objectFit: 'cover',
+      transform: 'scale(1)',
+    },
     },
     // Ajoutez d'autres membres ici
   ];
 
 
+
+
 // Page Services
 const TeamPage = () => (
+  
   <main className="pt-10 bg-gray-50">
     <section className="py-16 container mx-auto px-6">
       <SectionTitle

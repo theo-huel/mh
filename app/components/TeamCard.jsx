@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const TeamCard = ({ name, position, imageSrc, description }) => {
+const TeamCard = ({ name, position, imageSrc, imageSrcPopup,description, imageStyle }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const togglePopup = () => setIsOpen(!isOpen);
@@ -44,18 +44,40 @@ const TeamCard = ({ name, position, imageSrc, description }) => {
             >
               &times;
             </button>
-             <img 
+            {/* Flex row pour séparer image et infos */}
+            <div className="flex gap-4 items-start">
+              {/* Image à gauche */}
+              <img
+                src={imageSrcPopup}
+                alt={`${name} - image`}
+                className="w-40 h-40 rounded-md"
+                 style={{
+                  ...imageStyle,
+                }}
+              />
+
+              {/* Infos à droite */}
+              <div className="flex flex-col justify-center">
+                <h3 className="text-2xl font-bold mb-1">{name}</h3>
+                <p className="text-[#AD9551] font-medium">{position}</p>
+              </div>
+            </div>
+
+            {/* Description en bas, séparée */}
+            <p className="text-gray-700 mt-4">{description}</p>
+          </div>
+             {/* <img 
         src={imageSrc} 
         alt={`${name} - image`} 
-          className="w-full h-50 object-cover  rounded-md mb-4"
-style={{
-    objectPosition: 'center 20%'
-      }}      />
+          className="w-full h-50 object-contain flex  rounded-md mb-4"
+            style={{
+          objectPosition: 'center 20%'
+            }}      />
 
             <h3 className="text-2xl font-bold mb-2">{name}</h3>
             <p className="text-[#AD9551] mb-4 font-medium">{position}</p>
             <p className="text-gray-700">{description}</p>
-          </div>
+          </div> */}
         </div>
       )}
     </>
