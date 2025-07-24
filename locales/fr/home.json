@@ -6,20 +6,17 @@
     "button": "En savoir plus sur MH Business"
   },
   "services": {
-    "title": "Mes Services Clés",
+    "title": "Nos Services d'Accompagnement",
     "subtitle": "Une offre complète pour propulser votre entreprise.",
     "web": {
-      "title": "Création de Sites Web",
-      "desc": "Conception et développement de sites web modernes, performants et optimisés..."
+      "title": "Stratégie d’entreprise & Structuration"
     },
     "visual": {
-      "title": "Identité Visuelle & Impression",
-      "desc": "Création de logos, chartes graphiques et gestion de l'impression de vos supports..."
-    },
+      "title": "Développement commercial B2B"
+        },
     "admin": {
-      "title": "Gestion Administrative & Comptable",
-      "desc": "Aide à l'organisation administrative, mise en place de processus..."
-    },
+      "title": "Accompagnement opérationnel & Coaching"
+        },
     "button": "Voir tous les services"
   },
   "why": {
@@ -48,8 +45,8 @@
     "subtitle": "La satisfaction de mes clients, ma plus grande fierté.",
     "1": {
       "quote": "Merci à MH Business pour sa disponibilité aux questions et pour son accompagnement dans la conception du cadre marketing, du ciblage clients et d'une offre tarifiaire opérationnel.",
-      "author": "HV | Conseil & gestion",
-      "title": ""
+      "author": "Hassan Vural",
+      "title": "HV | Conseil & gestion"
     },
     "2": {
       "quote": "Grâce à l'accompagnement de MH Business, la gestion administrative...",
