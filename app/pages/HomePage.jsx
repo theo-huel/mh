@@ -1,11 +1,12 @@
-import MyBouton from '../components/Nouv/MonBouton.jsx'
-import MonBouton from '../components/MyButton.jsx'
-//import Navbarlogo from './components/NavBarLogo.jsx'
-import ServiceCard from '../components/ServiceCard.jsx'
-import HeroSection from '../components/HeroSection.jsx'
-
-import SectionTitle from '../components/SectionTitle.jsx'
-import TestimonialCard from '../components/TestimonialCard.jsx'
+import { useTranslation } from 'react-i18next';
+import MyBouton from '../components/Nouv/MonBouton.jsx';
+import MonBouton from '../components/MyButton.jsx';
+import ServiceCard from '../components/ServiceCard.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import SectionTitle from '../components/SectionTitle.jsx';
+import TestimonialCard from '../components/TestimonialCard.jsx';
+import PartnerLogos from '../components/PartnerLogos.jsx';
+import i18n from '../../i18n.js';
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -31,141 +32,129 @@ const Icon = ({ name, className }) => {
   const SpecificIcon = icons[name];
   return SpecificIcon ? <SpecificIcon className={className} /> : <span className={className}>[Icône]</span>;
 };
+const HomePage = ({ setCurrentPage }) => {
+  const { t } = useTranslation("home");
+  
 
+  return (
+    <main className="pt-20">
+      <HeroSection setCurrentPage={setCurrentPage} />
 
-// Page d'Accueil
-const HomePage = ({ setCurrentPage }) => (
-  <main className="pt-20"> {/* Ajout de padding-top pour éviter que la navbar fixe ne recouvre le contenu */}
-    <HeroSection setCurrentPage={setCurrentPage} />
+{/* <button onClick={() => i18n.changeLanguage('en')}>EN</button>
+<button onClick={() => i18n.changeLanguage('fr')}>FR</button> */}
 
-    {/* Section À Propos (aperçu) */}
-    <section className="py-16 bg-gray-50">
-      <div className="container mx-auto px-6 text-center">
-        <SectionTitle
-          title="Qui est MH Business ?"
-          subtitle="Votre partenaire dédié à la réussite entrepreneuriale."
-        />
-        <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-          MH Business est né de la volonté d'accompagner les entrepreneurs dans la concrétisation de leurs projets. Que vous soyez au début de votre aventure ou en phase de croissance, je vous apporte les outils et le soutien nécessaires pour atteindre vos objectifs. Mon approche est personnalisée, pragmatique et orientée résultats.
-        </p>
-        <MonBouton onClick={() => setCurrentPage('about')} variant="primary">
-          En savoir plus sur MH Business <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
-        </MonBouton>
-      </div>
-    </section>
-
-    {/* Section Services (aperçu) */}
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-6">
-        <SectionTitle
-          title="Mes Services Clés"
-          subtitle="Une offre complète pour propulser votre entreprise."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <ServiceCard
-            iconName="Globe"
-            title="Création de Sites Web"
-            description="Conception et développement de sites web modernes, performants et optimisés pour le référencement, avec Next.js, React et Tailwind CSS."
-            onClick={() => setCurrentPage("services")}          />
-          <ServiceCard
-            iconName="Printer"
-            title="Identité Visuelle & Impression"
-            description="Création de logos, chartes graphiques et gestion de l'impression de vos supports (cartes de visite, flyers, enseignes)."
-          onClick={() => setCurrentPage("services")}          />
-          <ServiceCard
-            iconName="BookOpen"
-            title="Gestion Administrative & Comptable"
-            description="Aide à l'organisation administrative, mise en place de processus et mise en relation avec des experts-comptables."
-            onClick={() => setCurrentPage("services")}          />
-        </div>
-        <div className="text-center mt-12">
-          <MonBouton onClick={() => setCurrentPage('services')} variant="outline">
-            Voir tous les services <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
+      {/* Section À Propos */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6 text-center">
+          <SectionTitle
+            title={t("about.title")}
+            subtitle={t("about.subtitle")}
+          />
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+            {t("about.text")}
+          </p>
+          <MonBouton onClick={() => setCurrentPage('about')} variant="primary">
+            {t("about.button")} <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
           </MonBouton>
         </div>
-      </div>
-    </section>
+      </section>
 
-    {/* Section Pourquoi choisir MH Business ? */}
-    <section className="py-16 bg-[#AD9551]-50">
-      <div className="container mx-auto px-6">
-        <SectionTitle
-          title="Pourquoi choisir MH Business ?"
-          subtitle="Des avantages concrets pour votre développement."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          <div className="space-y-6 text-gray-700 text-lg">
-            <div className="flex items-start">
-              <Icon name="CheckCircle" className="w-7 h-7 text-green-500 mr-3 mt-1 flex-shrink-0" />
-              <p>
-                <strong className="text-gray-900">Approche Personnalisée :</strong> Chaque accompagnement est unique, adapté à vos besoins spécifiques et à la réalité de votre entreprise.
-              </p>
+      {/* Section Services */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <SectionTitle
+            title={t("services.title")}
+            subtitle={t("services.subtitle")}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ServiceCard
+              iconName="Globe"
+              title={t("services.web.title")}
+              description={t("services.web.desc")}
+              onClick={() => setCurrentPage("services")}
+            />
+            <ServiceCard
+              iconName="Printer"
+              title={t("services.visual.title")}
+              description={t("services.visual.desc")}
+              onClick={() => setCurrentPage("services")}
+            />
+            <ServiceCard
+              iconName="BookOpen"
+              title={t("services.admin.title")}
+              description={t("services.admin.desc")}
+              onClick={() => setCurrentPage("services")}
+            />
+          </div>
+          <div className="text-center mt-12">
+            <MonBouton onClick={() => setCurrentPage('services')} variant="outline">
+              {t("services.button")} <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
+            </MonBouton>
+          </div>
+        </div>
+      </section>
+
+      {/* Section Pourquoi ? */}
+      {/* <section className="py-16 bg-[#AD9551]-50">
+        <div className="container mx-auto px-6">
+          <SectionTitle
+            title={t("why.title")}
+            subtitle={t("why.subtitle")}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+            <div className="space-y-6 text-gray-700 text-lg">
+              {["approach", "expertise", "network", "serenity"].map((key) => (
+                <div className="flex items-start" key={key}>
+                  <Icon name="CheckCircle" className="w-7 h-7 text-green-500 mr-3 mt-1 flex-shrink-0" />
+                  <p>
+                    <strong className="text-gray-900">{t(`why.${key}.title`)}</strong> {t(`why.${key}.desc`)}
+                  </p>
+                </div>
+              ))}
             </div>
-            <div className="flex items-start">
-              <Icon name="CheckCircle" className="w-7 h-7 text-green-500 mr-3 mt-1 flex-shrink-0" />
-              <p>
-                <strong className="text-gray-900">Expertise Multiple :</strong> Bénéficiez d'un large éventail de compétences, de la technique web au conseil stratégique.
-              </p>
-            </div>
-            <div className="flex items-start">
-              <Icon name="CheckCircle" className="w-7 h-7 text-green-500 mr-3 mt-1 flex-shrink-0" />
-              <p>
-                <strong className="text-gray-900">Réseau de Confiance :</strong> Accédez à un réseau de partenaires qualifiés pour les besoins que je ne gère pas directement.
-              </p>
-            </div>
-            <div className="flex items-start">
-              <Icon name="CheckCircle" className="w-7 h-7 text-green-500 mr-3 mt-1 flex-shrink-0" />
-              <p>
-                <strong className="text-gray-900">Gain de Temps et Sérénité :</strong> Déléguez les tâches complexes pour vous concentrer sur votre cœur de métier.
-              </p>
+            <div className="flex justify-center">
+              <img
+                src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Pourquoi+MH+Business%3F"
+                alt={t("why.imageAlt")}
+                className="rounded-xl shadow-lg w-full max-w-md"
+              />
             </div>
           </div>
-          <div className="flex justify-center">
-            {/* Placeholder image for this section */}
-            <img
-              src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Pourquoi+MH+Business%3F"
-              alt="Illustration des avantages"
-              className="rounded-xl shadow-lg w-full max-w-md"
-              onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/600x400/E0E7FF/4F46E5?text=Image+Avantages"; }}
+        </div>
+      </section> */}
+
+      {/* Témoignages */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-6">
+          <SectionTitle
+            title={t("testimonials.title")}
+            subtitle={t("testimonials.subtitle")}
+          />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <TestimonialCard
+              quote={t("testimonials.1.quote")}
+              author={t("testimonials.1.author")}
+              title={t("testimonials.1.title")}
+              imageSrc="/HVLOGO.jpeg"
+              imageSizeClasses="w-40 h-40"
+            />
+            <TestimonialCard
+              quote={t("testimonials.2.quote")}
+              author={t("testimonials.2.author")}
+              title={t("testimonials.2.title")}
+              imageSrc="https://placehold.co/96x96/FFFFFF/AD9551?text=ML"
+            />
+            <TestimonialCard
+              quote={t("testimonials.3.quote")}
+              author={t("testimonials.3.author")}
+              title={t("testimonials.3.title")}
+              imageSrc="https://placehold.co/96x96/AD9551/00000?text=CV"
             />
           </div>
         </div>
-      </div>
-    </section>
-
-    {/* Section Témoignages (aperçu) */}
-    <section className="py-16 bg-white">
-      <div className="container mx-auto px-6">
-        <SectionTitle
-          title="Ce que disent mes clients"
-          subtitle="La satisfaction de mes clients, ma plus grande fierté."
-        />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <TestimonialCard
-            quote="Merci à MH Business pour sa disponibilité aux questions et pour son accompagnement 
-            dans la conception du cadre marketing, du ciblage clients et d'une offre tarifiaire opérationnel."
-            author="Sophie D."
-            title="Fondatrice, 'Les Délices de Sophie'"
-            imageSrc="/HVLOGO.jpg"
-            imageSizeClasses="w-10 h-10"
-          />
-          <TestimonialCard
-            quote="Grâce à l'accompagnement de MH Business, la gestion administrative de mon entreprise est enfin fluide. Un vrai soulagement !"
-            author="Marc L."
-            title="Gérant, 'Solutions BTP'"
-            imageSrc="https://placehold.co/96x96/FFFFFF/AD9551?text=ML"
-          />
-          <TestimonialCard
-            quote="Le conseil stratégique de MH Business a été crucial pour le lancement de ma marque. Je recommande vivement !"
-            author="Clara V."
-            title="Créatrice, 'Atelier Clara'"
-            imageSrc="https://placehold.co/96x96/AD9551/00000?text=CV"
-          />
-        </div>
-      </div>
-    </section>
-
-  </main>
-);
+      </section>
+    </main>
+  );
+};
 
 export default HomePage;

@@ -1,6 +1,8 @@
 import MonBouton from './Nouv/MonBouton.jsx'
 import btn from '../css/MonBouton.module.css';
 import MyButton from './MyButton.jsx'
+import { useTranslation } from 'react-i18next';
+
 
 
 
@@ -30,7 +32,10 @@ const Icon = ({ name, className }) => {
 };
 
 // Composant HeroSection
-const HeroSection = ({ setCurrentPage }) => (
+const HeroSection = ({ setCurrentPage }) => {
+      const { t } = useTranslation("home");
+
+  return(
 
 
   <section className="relative bg-gradient-to-r from-[#AD9551] to-[#AD9551] text-white py-24 md:py-32 overflow-hidden">
@@ -44,19 +49,21 @@ const HeroSection = ({ setCurrentPage }) => (
       className="text-2xl md:text-4xl leading-tight mb-6 animate-fade-in-up"
       style={{ fontFamily: 'Times New Roman, serif' }}
     >
-      « MH Business, quand la stratégie devient action »
+      {t("hero.title")}
     </h2>
 
     <div >
         <MonBouton onClick={() => setCurrentPage('services')} variant="primary" ClassName={btn.boutonLogin}>
-          Découvrir mes services<Icon name="ChevronRight" className="inline-block ml-0 w-5 h-5" />
+                {t("hero.btn1")}
+<Icon name="ChevronRight" className="inline-block ml-0 w-5 h-5" />
         </MonBouton> 
         <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" >
-          Prendre rendez-vous
+         {t("hero.btn2")}
         </MyButton>
       </div>
   </div>
 </section>
 
-);
+)
+};
 export default HeroSection;

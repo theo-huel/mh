@@ -1,0 +1,21 @@
+{
+   "team": {
+    "members": {
+      "Matis":{
+        "position": "PDG",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      },
+      "Pietro":{
+        "position": "Chef de Projet",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      }
+    },
+    "equipe": {
+      "title":"Notre équipe",
+      "subtitle": "Une expertise complète pour chaque étape de votre développement."
+      },
+      "ensavoirplus" : "En savoir plus"
+
+    }
+  
+}

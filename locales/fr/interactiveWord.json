@@ -1,0 +1,43 @@
+{
+  "intro": "Survole chaque lettre pour découvrir nos valeurs.",
+  "M": {
+    "title": "Méthode",
+    "description": "Des outils concrets pour structurer et agir."
+  },
+  "H": {
+    "title": "Humain",
+    "description": "L’accompagnement commence par l’écoute et la confiance."
+  },
+  "B": {
+    "title": "Business-oriented",
+    "description": "Chaque action vise la performance et la croissance."
+  },
+  "U": {
+    "title": "Utilité",
+    "description": "Des conseils réellement applicables, pensés pour le terrain."
+  },
+  "S1": {
+    "title": "Stratégie",
+    "description": "On ne laisse rien au hasard, tout part d’une vision claire."
+  },
+  "I": {
+    "title": "Impact",
+    "description": "Ce qui compte, ce sont les résultats durables."
+  },
+  "N": {
+    "title": "Network",
+    "description": "Un réseau solide pour multiplier les opportunités."
+  },
+  "E": {
+    "title": "Engagement",
+    "description": "Présents à chaque étape, pour aller au bout ensemble."
+  },
+  "S2": {
+    "title": "Simplicité",
+    "description": "Rendre accessible ce qui paraît complexe."
+  },
+  "S3": {
+    "title": "Souplesse",
+    "description": "S’adapter à chaque entreprise, chaque réalité."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "about": {
+    "title": "À Propos de MH Business",
+    "subtitle": "MH Business accompagne les entrepreneurs et les PME dans leur développement stratégique et commercial.",
+    "mission": {
+      "h3": "Mission",
+      "p": "Accompagner les entrepreneurs et les PME dans leur structuration, leur développement commercial et leur croissance stratégique. Nous transformons les idées en plans concrets et les stratégies en actions, grâce à une approche personnalisée, humaine et orientée résultats. "
+    },
+    "vision": {
+      "h3": "Vision",
+      "p": "Créer un écosystème de croissance agile, où les entreprises, les indépendants et les talents collaborent pour générer un impact durable. Nous croyons qu’un bon conseil ne se limite pas à un rapport, mais se vit sur le terrain, au plus près des réalités business."
+    },
+    "valeurs": {
+      "h3": "Valeurs"
+  }
+  }
+}

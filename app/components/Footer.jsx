@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -26,31 +27,49 @@ const Icon = ({ name, className }) => {
 
 
 // Composant Footer
-const Footer = ({ setCurrentPage }) => (
+const Footer = ({ setCurrentPage }) => {
+      const { t } = useTranslation("navbar");
+
+  const navItems = [
+    { name: t("home.name"), page: 'home' },
+    { name: t("about.name"), page: 'about' },
+    { name: t("services.name"), page: 'services' },
+    { name: t("team.name"), page: 'equipe' },
+    { name: t("contact.name"), page: 'contact' },
+  ];
+
+
+  return(
   <footer className="bg-gray-900 text-white py-12">
     <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Section 1: À Propos */}
       <div>
-        <h3 className="text-xl font-bold mb-4 text-[#AD9551]">MH Business</h3>
+        <h3 className="text-xl font-bold mb-4 text-[#AD9551]">{t("footer.mh")}</h3>
         <p className="text-gray-400 text-sm">
-          Votre partenaire dédié pour propulser votre entreprise. Nous vous accompagnons de la conception de votre site web à la gestion administrative, en passant par l'identité visuelle.
+          {t("footer.p")}
         </p>
       </div>
 
       {/* Section 2: Liens Rapides */}
       <div>
-        <h3 className="text-xl font-bold mb-4 text-[#AD9551]">Liens Rapides</h3>
+        <h3 className="text-xl font-bold mb-4 text-[#AD9551]">{t("footer.link")}</h3>
         <ul className="space-y-2">
-          <li><a href="#" onClick={() => setCurrentPage('home')} className="text-gray-400 hover:text-white transition duration-300">Accueil</a></li>
-          <li><a href="#" onClick={() => setCurrentPage('about')} className="text-gray-400 hover:text-white transition duration-300">À Propos</a></li>
-          <li><a href="#" onClick={() => setCurrentPage('services')} className="text-gray-400 hover:text-white transition duration-300">Services</a></li>
-          <li><a href="#" onClick={() => setCurrentPage('contact')} className="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
-        </ul>
+  {navItems.map(({ name, page }) => (
+    <li key={page}>
+      <button
+        onClick={() => setCurrentPage(page)}
+        className="text-gray-400 hover:text-white transition duration-300"
+      >
+        {name}
+      </button>
+    </li>
+  ))}
+</ul>
       </div>
 
       {/* Section 3: Contact */}
       <div>
-        <h3 className="text-xl font-bold mb-4 text-[#AD9551]">Contactez-nous</h3>
+        <h3 className="text-xl font-bold mb-4 text-[#AD9551]">{t("footer.contact")}</h3>
         <p className="text-gray-400 flex items-center mb-2">
           <Icon name="Mail" className="w-5 h-5 mr-2 text-[#AD9551]" />
           contact@mhbusiness.com
@@ -68,8 +87,9 @@ const Footer = ({ setCurrentPage }) => (
       </div>
     </div>
     <div className="text-center text-gray-500 text-sm mt-8 pt-8 border-t border-gray-800">
-      &copy; {new Date().getFullYear()} MH Business. Tous droits réservés.
+      &copy; {new Date().getFullYear()} {t("footer.rights")}
     </div>
   </footer>
-);
+)
+};
 export default Footer;

@@ -1,14 +1,13 @@
-import MonBouton from '../components/Nouv/MonBouton.jsx'
-//import MyBouton from './components/MyButton.jsx'
-//import Navbarlogo from './components/NavBarLogo.jsx'
-import ServiceCard from '../components/ServiceCard.jsx'
-import HeroSection from '../components/HeroSection.jsx'
+
+import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import MonBouton from '../components/Nouv/MonBouton.jsx';
+import ServiceCard from '../components/ServiceCard.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import SectionTitle from '../components/SectionTitle.jsx';
+import TestimonialCard from '../components/TestimonialCard.jsx';
 import btn from '../css/MonBouton.module.css';
 
-
-import SectionTitle from '../components/SectionTitle.jsx'
-import TestimonialCard from '../components/TestimonialCard.jsx'
-import React, { useState, useEffect } from 'react';
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -38,8 +37,9 @@ const Icon = ({ name, className }) => {
 
 // Page Contact
 
-   // Extrait de ton composant ContactPage.jsx
 const ContactPage = () => {
+  const { t } = useTranslation('contact');
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -53,49 +53,45 @@ const ContactPage = () => {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = async (e) => { // Ajoute 'async' ici
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus('Envoi en cours...');
+    setStatus(t('sending'));
 
     try {
-      const response = await fetch('/api/send-email', { // <-- L'URL de ton backend
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData), // Envoie les données du formulaire en JSON
+        body: JSON.stringify(formData),
       });
 
       const result = await response.json();
 
-      if (response.ok) { // Vérifie si la réponse est un succès (statut 2xx)
-        setStatus(result.message); // Affiche le message de succès du backend
-        setFormData({ name: '', email: '', subject: '', message: '' }); // Réinitialise le formulaire
-        setTimeout(() => {
-          setStatus('');
-        }, 5000); // Le message disparaîtra après 5 secondes (5000 millisecondes)
+      if (response.ok) {
+        setStatus(t('successMessage'));
+        setFormData({ name: '', email: '', subject: '', message: '' });
+        setTimeout(() => setStatus(''), 5000);
       } else {
-        setStatus(`Erreur: ${result.message || 'Quelque chose s\'est mal passé.'}`); // Affiche le message d'erreur du backend
+        setStatus(`${t('error')}: ${result.message || t('defaultError')}`);
       }
     } catch (error) {
-      console.error('Erreur lors de la soumission du formulaire :', error);
-      setStatus('Erreur de connexion au serveur. Veuillez réessayer plus tard.');
+      console.error('Form error:', error);
+      setStatus(t('serverError'));
     }
   };
-
-
 
   return (
     <main className="pt-10 bg-gray-50">
       <section className="py-16 container mx-auto px-6">
         <SectionTitle
-          title="Contactez MH Business"
-          subtitle="Discutons de votre projet et de la manière dont je peux vous aider."
+          title={t('pageTitle')}
+          subtitle={t('pageSubtitle')}
         />
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">Nom Complet</label>
+              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">{t('name')}</label>
               <input
                 type="text"
                 id="name"
@@ -107,7 +103,7 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">Adresse Email</label>
+              <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">{t('email')}</label>
               <input
                 type="email"
                 id="email"
@@ -119,7 +115,7 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">Sujet</label>
+              <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">{t('subject')}</label>
               <input
                 type="text"
                 id="subject"
@@ -131,7 +127,7 @@ const ContactPage = () => {
               />
             </div>
             <div>
-              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">Votre Message</label>
+              <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">{t('message')}</label>
               <textarea
                 id="message"
                 name="message"
@@ -142,7 +138,7 @@ const ContactPage = () => {
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
               ></textarea>
             </div>
-            <MonBouton text=' Envoyer le message' type="submit" ClassName={`${btn.boutonLogin} w-full`}/> 
+            <MonBouton text={t('sendButton')} type="submit" ClassName={`${btn.boutonLogin} w-full`} />
             {status && (
               <p className={`mt-4 text-center ${status.includes('succès') ? 'text-green-600' : 'text-red-600'}`}>
                 {status}
@@ -151,7 +147,7 @@ const ContactPage = () => {
           </form>
 
           <div className="mt-12 text-center">
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Informations Directes</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('directInfoTitle')}</h3>
             <p className="text-gray-700 text-lg mb-2">
               <Icon name="Mail" className="inline-block w-6 h-6 mr-2 text-[#AD9551]" />
               Email: contact@mhbusiness.com
@@ -161,7 +157,7 @@ const ContactPage = () => {
               MH Business
             </p>
             <p className="text-gray-700 text-lg mt-2">
-              Je m'engage à vous répondre dans les plus brefs délais.
+              {t('responseCommitment')}
             </p>
           </div>
         </div>
@@ -169,8 +165,5 @@ const ContactPage = () => {
     </main>
   );
 };
-
-
-
 
 export default ContactPage;

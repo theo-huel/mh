@@ -1,11 +1,10 @@
-import MonBouton from '../components/Nouv/MonBouton.jsx'
-//import MyBouton from './components/MyButton.jsx'
-//import Navbarlogo from './components/NavBarLogo.jsx'
-import ServiceCard from '../components/ServiceCard.jsx'
-import HeroSection from '../components/HeroSection.jsx'
-
-import SectionTitle from '../components/SectionTitle.jsx'
-import TestimonialCard from '../components/TestimonialCard.jsx'
+import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
+import MonBouton from '../components/Nouv/MonBouton.jsx';
+import ServiceCard from '../components/ServiceCard.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import SectionTitle from '../components/SectionTitle.jsx';
+import TestimonialCard from '../components/TestimonialCard.jsx';
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -34,9 +33,8 @@ const Icon = ({ name, className }) => {
 
 
 
-
-import { useState } from 'react';
 const ServicesPage = () => {
+  const { t } = useTranslation("services");
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleCard = (index) => {
@@ -46,40 +44,28 @@ const ServicesPage = () => {
   const services = [
     {
       iconName: "Globe",
-      title: "Stratégie d’entreprise & Structuration",
-      description: `• Diagnostic stratégique (SWOT, Business Model Canvas, etc.)
-• Clarification de la vision, de la mission et des objectifs
-• Structuration de l’offre, de l’organisation interne et des priorités
-• Mise en place de KPIs et d’un plan d’action`
+      title: t("services.strategy.title"),
+      description: t("services.strategy.description"),
     },
     {
       iconName: "Users",
-      title: "Développement commercial B2B",
-      description: `• Création ou optimisation de la stratégie commerciale
-• Définition des personas cibles
-• Construction d’un tunnel d’acquisition
-• Outils d’aide à la vente, pitch, formation des équipes
-• Mise en place de partenariats stratégiques`
+      title: t("services.b2b.title"),
+      description: t("services.b2b.description"),
     },
     {
       iconName: "Briefcase",
-      title: "Accompagnement opérationnel & Coaching",
-      description: `• Suivi d’indicateurs, reporting, ajustements
-• Coaching de dirigeant ou d’équipe commerciale`
+      title: t("services.coaching.title"),
+      description: t("services.coaching.description"),
     },
     {
       iconName: "Lightbulb",
-      title: "Mise en relation & réseau professionnel",
-      description: `• Mise en lien avec des commerciaux indépendants, experts ou prestataires
-• Sourcing de stagiaires et jeunes talents (marketing, finance, RH…)
-• Mise en relation pour projets spécifiques (vente, achat, partenariat)`
+      title: t("services.network.title"),
+      description: t("services.network.description"),
     },
     {
       iconName: "Users",
-      title: "Formations & Ateliers stratégiques",
-      description: `• Ateliers sur-mesure (stratégie, business model, prospection…)
-• Formations à la vente B2B
-• Séminaires pour dirigeants ou commerciaux`
+      title: t("services.training.title"),
+      description: t("services.training.description"),
     }
   ];
 
@@ -87,42 +73,38 @@ const ServicesPage = () => {
     <main className="pt-10 bg-gray-50">
       <section className="py-16 container mx-auto px-6">
         <SectionTitle
-          title="Nos Services d'Accompagnement"
-          subtitle="Une expertise complète pour chaque étape de votre développement."
+          title={t("pageTitle")}
+          subtitle={t("pageSubtitle")}
         />
-<div className="max-w-6xl mx-auto space-y-8">
-  {/* Ligne 1 : 3 cartes */}
-  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-    {services.slice(0, 3).map((service, index) => (
-      <ServiceCard
-        key={index}
-        {...service}
-        isOpen={openIndex === index}
-        onToggle={() => toggleCard(index)}
-      />
-    ))}
-  </div>
 
-  {/* Ligne 2 : cartes restantes, centrées */}
-  {services.length > 3 && (
-    <div className="flex flex-wrap justify-center gap-8">
-      {services.slice(3).map((service, index) => (
-        <ServiceCard
-          key={index + 3}
-          {...service}
-          isOpen={openIndex === index + 3}
-          onToggle={() => toggleCard(index + 3)}
-        />
-      ))}
-    </div>
-  )}
-</div>
+        <div className="max-w-6xl mx-auto space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
+            {services.slice(0, 3).map((service, index) => (
+              <ServiceCard
+                key={index}
+                {...service}
+                isOpen={openIndex === index}
+                onToggle={() => toggleCard(index)}
+              />
+            ))}
+          </div>
 
+          {services.length > 3 && (
+            <div className="flex flex-wrap justify-center gap-8">
+              {services.slice(3).map((service, index) => (
+                <ServiceCard
+                  key={index + 3}
+                  {...service}
+                  isOpen={openIndex === index + 3}
+                  onToggle={() => toggleCard(index + 3)}
+                />
+              ))}
+            </div>
+          )}
+        </div>
 
         <div className="text-center mt-12 text-gray-700 text-lg">
-          <p>
-            Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.
-          </p>
+          <p>{t("footerNote")}</p>
         </div>
       </section>
     </main>

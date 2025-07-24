@@ -1,0 +1,21 @@
+{
+  "team": {
+    "members": {
+      "Matis": {
+        "position": "CEO",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      },
+      "Pietro": {
+        "position": "Project Manager",
+        "description": "bLABALAZIDIJZEIHDZEUIHD"
+      }
+    },
+    "equipe": {
+      "title": "Our Team",
+      "subtitle": "Comprehensive expertise for every stage of your development."
+    },
+    "ensavoirplus": "Learn more"
+
+
+  }
+}

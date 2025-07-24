@@ -7,6 +7,7 @@ import HeroSection from '../components/HeroSection.jsx'
 
 import SectionTitle from '../components/SectionTitle.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
+import { useTranslation } from 'react-i18next';
 
 const Icon = ({ name, className }) => {
   // Une implémentation simple pour afficher un caractère ou un SVG si possible,
@@ -34,14 +35,22 @@ const Icon = ({ name, className }) => {
 };
 
 
+
+
+
+
+// Page Services
+const TeamPage = () => {
+    const { t } = useTranslation("team");
+    
 const members = [
     {
       name: "Huel Matis",
-      position: "PDG",
+      position: t("team.members.Matis.position"),
       imageSrc: "/img/imgMatis.jpg",
             imageSrcPopup: "/img/imgMatis.jpg",
 
-      description: "Matis le bg gère ca depuis 6 mois en plus d'etre en maladie à cause de fdp",
+      description: t("team.members.Matis.description"),
       imageStyle: {
       objectPosition: 'left 15%',
       objectFit: 'cover',
@@ -50,10 +59,10 @@ const members = [
     },
     {
       name: "Vadala Pietro",
-      position: "Chef de Projet",
+      position: t("team.members.Pietro.position"),
       imageSrc: "/img/imgPietro.jpg",
             imageSrcPopup: "/img/imgPietroGolf.jpg",
-      description: "Lucas supervise les projets clients de A à Z. Il est expert en gestion agile et en planification stratégique.",
+      description: t("team.members.Pietro.description"),
       imageStyle: {
       objectPosition: 'left 20%',
       objectFit: 'cover',
@@ -62,32 +71,30 @@ const members = [
     },
     // Ajoutez d'autres membres ici
   ];
-
-
-
-
-// Page Services
-const TeamPage = () => (
   
+
+  return(
   <main className="pt-10 bg-gray-50">
     <section className="py-16 container mx-auto px-6">
       <SectionTitle
-        title="Notre Équipe"
-        subtitle="Une expertise complète pour chaque étape de votre développement."
+        title= {t("team.equipe.title")}
+        subtitle={t("team.equipe.subtitle")}
       />
     <div className="flex flex-wrap justify-center gap-8">
         {members.map((member, index) => (
             <TeamCard key={index} {...member} />
           ))}
       </div>
-      <div className="text-center mt-12 text-gray-700 text-lg">
+      {/* <div className="text-center mt-12 text-gray-700 text-lg">
         <p>
+          {t("team.other")}
           Mon approche est flexible : je peux réaliser ces prestations directement ou vous orienter vers des partenaires de confiance de mon réseau, selon vos besoins et la complexité du projet.
         </p>
-      </div>
+      </div> */}
     </section>
   </main>
-);
+)
+};
 
 
 export default TeamPage;

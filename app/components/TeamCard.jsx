@@ -1,7 +1,12 @@
+import { useTranslation } from 'react-i18next';
+
+
 import { useState } from "react";
 
 const TeamCard = ({ name, position, imageSrc, imageSrcPopup,description, imageStyle }) => {
   const [isOpen, setIsOpen] = useState(false);
+    const { t } = useTranslation("team");
+
 
   const togglePopup = () => setIsOpen(!isOpen);
 
@@ -25,7 +30,7 @@ const TeamCard = ({ name, position, imageSrc, imageSrcPopup,description, imageSt
           }}
           className="text-sm text-[#AD9551] underline mt-2 hover:text-[#8C7436]"
         >
-          En savoir plus
+          {t("team.ensavoirplus")}
         </button>
       </div>
 

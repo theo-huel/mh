@@ -4,6 +4,7 @@ import MonBouton from '../components/Nouv/MonBouton.jsx'
 import ServiceCard from '../components/ServiceCard.jsx'
 import HeroSection from '../components/HeroSection.jsx'
 import InteractiveWord from '../components/InteractiveWord.jsx'
+import { useTranslation } from 'react-i18next';
 
 import SectionTitle from '../components/SectionTitle.jsx'
 import TestimonialCard from '../components/TestimonialCard.jsx'
@@ -35,13 +36,16 @@ const Icon = ({ name, className }) => {
 
 
 // Page À Propos
-const AboutPage = () => (
+const AboutPage = () => {
+      const { t } = useTranslation("about");
+
+  return(
   <main className="pt-10 bg-gray-50">
     <section className="py-16 container mx-auto px-6">
       <SectionTitle
-        title="À Propos de MH Business"
-        subtitle="MH Business accompagne les entrepreneurs et les PME dans leur développement stratégique et commercial."
-      />
+        title={t("about.title")}
+        subtitle={t("about.subtitle")}
+        />
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
         <div className="flex flex-col md:flex-row items-center md:items-start mb-10">
           {/* <img
@@ -51,18 +55,18 @@ const AboutPage = () => (
             onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/200x200/AD9452/AD9452?text=Votre+Photo"; }}
           /> */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">Mission</h3>
+            <h3 className="text-3xl font-bold text-gray-900 mb-4 text-center">{t("about.mission.h3")}</h3>
             <p className="text-gray-700 text-lg leading-relaxed">
-             Accompagner les entrepreneurs et les PME dans leur structuration, leur développement commercial et leur croissance stratégique.
-              Nous transformons les idées en plans concrets et les stratégies en actions, grâce à une approche personnalisée, humaine et orientée résultats.
-             </p>
+              {t("about.mission.p")}
+              </p>
           </div>
         </div>
 
-        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Vision</h3>
+        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">{t("about.vision.h3")}</h3>
         
-          <p>Créer un écosystème de croissance agile, où les entreprises, les indépendants et les talents collaborent pour générer un impact durable.
-Nous croyons qu’un bon conseil ne se limite pas à un rapport, mais se vit sur le terrain, au plus près des réalités business.</p>
+          <p>
+            {t("about.vision.p")}
+          </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {/* <div className="bg-indigo-50 p-6 rounded-lg">
             <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Lightbulb" className="w-6 h-6 mr-2" /> Écoute & Compréhension</h4>
@@ -83,14 +87,15 @@ Nous croyons qu’un bon conseil ne se limite pas à un rapport, mais se vit sur
 
         </div>
 
-        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">Valeurs</h3>
+        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">{t("about.valeurs.h3")}</h3>
         <p className="text-gray-700 text-lg leading-relaxed mb-8">
         </p>
         <InteractiveWord/>
       </div>
     </section>
   </main>
-);
+)
+};
 
 
 export default AboutPage;

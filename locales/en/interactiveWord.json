@@ -1,0 +1,43 @@
+{
+  "intro": "Hover over each letter to discover our values.",
+  "M": {
+    "title": "Method",
+    "description": "Concrete tools to structure and act."
+  },
+  "H": {
+    "title": "Human",
+    "description": "Support starts with listening and trust."
+  },
+  "B": {
+    "title": "Business-oriented",
+    "description": "Every action aims at performance and growth."
+  },
+  "U": {
+    "title": "Usefulness",
+    "description": "Advice that is truly applicable, designed for the field."
+  },
+  "S1": {
+    "title": "Strategy",
+    "description": "Nothing is left to chance; everything starts from a clear vision."
+  },
+  "I": {
+    "title": "Impact",
+    "description": "What matters are lasting results."
+  },
+  "N": {
+    "title": "Network",
+    "description": "A strong network to multiply opportunities."
+  },
+  "E": {
+    "title": "Engagement",
+    "description": "Present at every step, to see it through together."
+  },
+  "S2": {
+    "title": "Simplicity",
+    "description": "Making the complex accessible."
+  },
+  "S3": {
+    "title": "Flexibility",
+    "description": "Adapting to each company, each reality."
+  }
+}

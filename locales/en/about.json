@@ -1,0 +1,17 @@
+{
+  "about": {
+    "title": "About MH Business",
+    "subtitle": "MH Business supports entrepreneurs and SMEs in their strategic and commercial development.",
+    "mission": {
+      "h3": "Mission",
+      "p": "Support entrepreneurs and SMEs in their structuring, commercial development, and strategic growth. We turn ideas into concrete plans and strategies into actions through a personalized, human, and results-oriented approach."
+    },
+    "vision": {
+      "h3": "Vision",
+      "p": "Create an agile growth ecosystem where companies, freelancers, and talents collaborate to generate lasting impact. We believe that good advice is not limited to a report, but is lived in the field, as close as possible to real business situations."
+    },
+    "valeurs": {
+      "h3": "Values"
+    }
+  }
+}
