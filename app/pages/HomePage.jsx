@@ -74,13 +74,13 @@ const HomePage = ({ setCurrentPage }) => {
               onClick={() => setCurrentPage("services")}
             />
             <ServiceCard
-              iconName="Printer"
+              iconName="Users"
               title={t("services.visual.title")}
               description={t("services.visual.desc")}
               onClick={() => setCurrentPage("services")}
             />
             <ServiceCard
-              iconName="BookOpen"
+              iconName="Lightbulb"
               title={t("services.admin.title")}
               description={t("services.admin.desc")}
               onClick={() => setCurrentPage("services")}
@@ -130,15 +130,16 @@ const HomePage = ({ setCurrentPage }) => {
             title={t("testimonials.title")}
             subtitle={t("testimonials.subtitle")}
           />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto space-y-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 gap-8 items-start">
             <TestimonialCard
               quote={t("testimonials.1.quote")}
               author={t("testimonials.1.author")}
               title={t("testimonials.1.title")}
-              imageSrc="/HVLOGO.jfif"
+              imageSrc="/img/HVLOGO.jfif"
               imageSizeClasses="w-40 h-40"
             />
-            <TestimonialCard
+            {/* <TestimonialCard
               quote={t("testimonials.2.quote")}
               author={t("testimonials.2.author")}
               title={t("testimonials.2.title")}
@@ -149,7 +150,9 @@ const HomePage = ({ setCurrentPage }) => {
               author={t("testimonials.3.author")}
               title={t("testimonials.3.title")}
               imageSrc="https://placehold.co/96x96/AD9551/00000?text=CV"
-            />
+            /> */}
+        </div>
+
           </div>
         </div>
       </section>
