@@ -3,15 +3,15 @@ import { useTranslation } from 'react-i18next';
 
 
 const clients = [
-  { id: 1, name: 'Partenaire1', logoSrc: '/img/naeliaNet.png', url: 'https://partenaire1.com' },
+  { id: 1, name: 'Partenaire1', logoSrc: '/img/nealiaNet.png', url: 'https://partenaire1.com' },
   { id: 2, name: 'Partenaire2', logoSrc: '/img/HVLOGO.jpg', url: 'https://partenaire2.com' },
-  { id: 3, name: 'Partenaire1', logoSrc: '/img/logo Degrave.avif', url: 'https://partenaire1.com' },
-  { id: 4, name: 'Partenaire2', logoSrc: '/img/naeliaNet.png', url: 'https://partenaire2.com' },
+  { id: 3, name: 'Partenaire1', logoSrc: '/img/logo Degrave.jpg', url: 'https://partenaire1.com' },
+  { id: 4, name: 'Partenaire2', logoSrc: '/img/nealiaNet.png', url: 'https://partenaire2.com' },
   { id: 5, name: 'Partenaire1', logoSrc: '/img/HVLOGO.jpg', url: 'https://partenaire1.com' },
-  { id: 6, name: 'Partenaire2', logoSrc: '/img/logo Degrave.avif', url: 'https://partenaire2.com' },
-  { id: 7, name: 'Partenaire1', logoSrc: '/img/naeliaNet.png', url: 'https://partenaire1.com' },
+  { id: 6, name: 'Partenaire2', logoSrc: '/img/logo Degrave.jpg', url: 'https://partenaire2.com' },
+  { id: 7, name: 'Partenaire1', logoSrc: '/img/nealiaNet.png', url: 'https://partenaire1.com' },
   { id: 8, name: 'Partenaire2', logoSrc: '/img/HVLOGO.jpg', url: 'https://partenaire2.com' },
-  { id: 9, name: 'Partenaire2', logoSrc: '/img/logo Degrave.avif', url: 'https://partenaire2.com' },
+  { id: 9, name: 'Partenaire2', logoSrc: '/img/logo Degrave.jpg', url: 'https://partenaire2.com' },
 ];
 
 

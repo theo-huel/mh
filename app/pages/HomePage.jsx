@@ -136,7 +136,7 @@ const HomePage = ({ setCurrentPage }) => {
               quote={t("testimonials.1.quote")}
               author={t("testimonials.1.author")}
               title={t("testimonials.1.title")}
-              imageSrc="/img/HVLOGO.jfif"
+              imageSrc="/img/HVLOGO.jpeg"
               imageSizeClasses="w-40 h-40"
             />
             {/* <TestimonialCard
