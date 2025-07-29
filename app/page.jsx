@@ -14,7 +14,7 @@ import HomePage from './pages/HomePage.jsx'
 import AboutPage from './pages/AboutPage.jsx'
 import ServicesPage from './pages/ServicesPage.jsx'
 import TeamPage from './pages/TeamPage.jsx'
-import PartnerLogos from './components/PartnerLogos.jsx';
+import ClientsLogos from './components/ClientsLogos.jsx';
 
 import ContactPage from './pages/ContactPage.jsx'
 import btn from './css/MonBouton.module.css';
@@ -113,7 +113,7 @@ export default function App() {
       <Navbarlogo setCurrentPage={setCurrentPage} />
       {renderPage()}
       <CallToAction setCurrentPage={setCurrentPage} /> {/* CTA en bas de chaque page */}
-      <PartnerLogos/>
+      <ClientsLogos/>
 
       <Footer setCurrentPage={setCurrentPage} />
     </div>

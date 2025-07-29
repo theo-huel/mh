@@ -5,7 +5,7 @@ import ServiceCard from '../components/ServiceCard.jsx';
 import HeroSection from '../components/HeroSection.jsx';
 import SectionTitle from '../components/SectionTitle.jsx';
 import TestimonialCard from '../components/TestimonialCard.jsx';
-import PartnerLogos from '../components/PartnerLogos.jsx';
+import PartnerLogos from '../components/ClientsLogos.jsx';
 import i18n from '../../i18n.js';
 
 const Icon = ({ name, className }) => {

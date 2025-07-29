@@ -69,6 +69,18 @@ const members = [
       transform: 'scale(1)',
     },
     },
+    {
+      name: "Huel Théo",
+      position: t("team.members.Theo.position"),
+      imageSrc: "/img/imgTheo.jpg",
+            imageSrcPopup: "/img/imgTheo.jpg",
+      description: t("team.members.Theo.description"),
+      imageStyle: {
+      objectPosition: 'left 20%',
+      objectFit: 'cover',
+      transform: 'scale(1)',
+    },
+    },
     // Ajoutez d'autres membres ici
   ];
   

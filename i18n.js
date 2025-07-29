@@ -9,6 +9,8 @@ import servicesEn from './locales/en/services.json';
 import contactEn from './locales/en/contact.json';
 import navbarEn from './locales/en/navbar.json';
 import interactiveEn from './locales/en/interactiveWord.json';
+import clientsEn from './locales/en/clients.json';
+
 
 
 
@@ -20,6 +22,7 @@ import servicesFr from './locales/fr/services.json';
 import contactFr from './locales/fr/contact.json';
 import navbarFr from './locales/fr/navbar.json';
 import interactiveFr from './locales/fr/interactiveWord.json';
+import clientsFr from './locales/fr/clients.json';
 
 
 
@@ -38,7 +41,8 @@ i18n
         services:servicesEn,
         contact:contactEn,
         navbar:navbarEn,
-        interactiveWord:interactiveEn
+        interactiveWord:interactiveEn,
+        clients:clientsEn,
 
 
       },
@@ -47,7 +51,8 @@ i18n
         services:servicesFr, 
         contact:contactFr,
         navbar:navbarFr,
-        interactiveWord:interactiveFr
+        interactiveWord:interactiveFr,
+        clients:clientsFr
 
 
       },
