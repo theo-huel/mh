@@ -9,12 +9,12 @@ import ServiceCard from './components/ServiceCard.jsx'
 import CallToAction from './components/CallToAction.jsx'
 import SectionTitle from './components/SectionTitle.jsx'
 import TestimonialCard from './components/TestimonialCard.jsx'
-import HomePage from './home/page.jsx'
-import AboutPage from './about/page.jsx'
-import ServicesPage from './services/page.jsx'
-import TeamPage from './team/page.jsx'
+import HomePage from './pages/home/page.jsx'
+import AboutPage from './pages/about/page.jsx'
+import ServicesPage from './pages/services/page.jsx'
+import TeamPage from './pages/team/page.jsx'
 import ClientsLogos from './components/ClientsLogos.jsx';
-import ContactPage from './contact/page.jsx'
+import ContactPage from './pages/contact/page.jsx'
 
 
 // Fonction pour initialiser l'état de la page

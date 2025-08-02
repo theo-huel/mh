@@ -1,6 +1,6 @@
-import InteractiveWord from '../components/InteractiveWord.jsx'
+import InteractiveWord from '../../components/InteractiveWord.jsx'
 import { useTranslation } from 'react-i18next';
-import SectionTitle from '../components/SectionTitle.jsx'
+import SectionTitle from '../../components/SectionTitle.jsx'
 
 
 // Page À Propos

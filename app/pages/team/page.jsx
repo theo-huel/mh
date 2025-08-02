@@ -1,6 +1,6 @@
 
-import TeamCard from '../components/TeamCard.jsx'
-import SectionTitle from '../components/SectionTitle.jsx'
+import TeamCard from '../../components/TeamCard.jsx'
+import SectionTitle from '../../components/SectionTitle.jsx'
 import { useTranslation } from 'react-i18next';
 
 

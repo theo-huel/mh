@@ -1,8 +1,8 @@
 "use client"
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import ServiceCard from '../components/ServiceCard.jsx';
-import SectionTitle from '../components/SectionTitle.jsx';
+import ServiceCard from '../../components/ServiceCard.jsx';
+import SectionTitle from '../../components/SectionTitle.jsx';
 
 
 

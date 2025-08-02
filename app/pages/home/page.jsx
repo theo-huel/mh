@@ -1,12 +1,12 @@
 "use client"
 
 import { useTranslation } from 'react-i18next';
-import MonBouton from '../components/MyButton.jsx';
-import ServiceCard from '../components/ServiceCard.jsx';
-import HeroSection from '../components/HeroSection.jsx';
-import SectionTitle from '../components/SectionTitle.jsx';
-import TestimonialCard from '../components/TestimonialCard.jsx';
-import Icon from '../components/Icon.jsx';
+import MonBouton from '../../components/MyButton.jsx';
+import ServiceCard from '../../components/ServiceCard.jsx';
+import HeroSection from '../../components/HeroSection.jsx';
+import SectionTitle from '../../components/SectionTitle.jsx';
+import TestimonialCard from '../../components/TestimonialCard.jsx';
+import Icon from '../../components/Icon.jsx';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation'; // or 'next/router'
 import ReactMarkdown from 'react-markdown'
