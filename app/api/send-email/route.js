@@ -46,7 +46,7 @@ export async function POST(request) {
 
     // 2. Envoi de l'e-mail de confirmation automatique à l'expéditeur du formulaire
     const userMailOptions = {
-      from: process.env.EMAIL_USER,
+      from: process.env.ADMIN_EMAIL,
       to: email,
       subject: `Confirmation de réception de votre message - MH Business`,
       html: `

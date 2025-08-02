@@ -27,22 +27,26 @@ const InteractiveWord = () => {
   return (
     <div className="flex flex-col items-center space-y-6 mt-12 px-4">
       <div
-        className="flex flex-wrap justify-center space-x-4 text-4xl font-extrabold text-gray-800"
+        className="flex justify-center text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800 whitespace-nowrap"
         onMouseLeave={() => setActiveKey(null)}
       >
+
+
         {letters.map(({ key, display }, index) => (
           <span
-            key={index}
-            onMouseEnter={() => setActiveKey(key)}
-            onClick={() => handleSelect(key)}
-            className={`transition duration-200 cursor-pointer ${
-              activeKey === key
-                ? "text-[#AD9551] scale-125"
-                : "hover:scale-110"
-            }`}
-          >
-            {display}
-          </span>
+  key={index}
+  onMouseEnter={() => setActiveKey(key)}
+  onClick={() => handleSelect(key)}
+  className={`mx-1 px-1 py-1 sm:px-2 transition duration-200 cursor-pointer ${
+    activeKey === key
+      ? "text-[#AD9551] scale-125"
+      : "hover:scale-110"
+  }`}
+>
+  {display}
+</span>
+
+
         ))}
       </div>
 

@@ -53,7 +53,7 @@ const AboutPage = () => {
   </div>
 
   <div className="flex-1 text-center md:text-center">
-        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">{t("about.vision.h3")}</h3>
+        <h3 className="text-4xl font-extrabold text-gray-900 mb-2">{t("about.vision.h3")}</h3>
         <h2 className="text-xl italic text-gray-600 mb-8">{t("about.vision.h2")}</h2>
      
         <div className="space-y-6 text-gray-700 text-lg leading-relaxed ">
@@ -105,8 +105,8 @@ const AboutPage = () => {
         </div>
 
 
+        <h3 className="text-4xl font-extrabold text-gray-900 mb-2 text-center">{t("about.valeurs.h3")}</h3>
 
-        <h3 className="text-3xl font-bold text-gray-900 mb-6 mt-12 text-center">{t("about.valeurs.h3")}</h3>
         <p className="text-gray-700 text-lg leading-relaxed mb-8">
         </p>
         <InteractiveWord/>
