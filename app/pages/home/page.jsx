@@ -6,7 +6,6 @@ import SectionTitle from '../../components/SectionTitle.jsx';
 import TestimonialCard from '../../components/TestimonialCard.jsx';
 import Icon from '../../components/Icon.jsx';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation'; // or 'next/router'
 import ReactMarkdown from 'react-markdown'
 
 
@@ -29,7 +28,7 @@ const HomePage = ({ setCurrentPage }) => {
             subtitle={t("about.subtitle")}
           />
           <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-            {t("about.text")}
+          <ReactMarkdown>{t("about.text")}</ReactMarkdown>
           </p>
           <MonBouton onClick={() => setCurrentPage('about')} variant="primary">
             {t("about.button")} <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
@@ -58,7 +57,7 @@ const HomePage = ({ setCurrentPage }) => {
               onClick={() => setCurrentPage("services")}
             />
             <ServiceCard
-              iconName="Lightbulb"
+              iconName="Handshake"
               title={t("services.admin.title")}
               description={t("services.admin.desc")}
               onClick={() => setCurrentPage("services")}
@@ -139,3 +138,4 @@ const HomePage = ({ setCurrentPage }) => {
 };
 
 export default HomePage;
+
