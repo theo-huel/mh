@@ -1,6 +1,5 @@
+"use client"
 import { useTranslation } from 'react-i18next';
-
-
 import { useState } from "react";
 
 const TeamCard = ({ name, position, imageSrc, imageSrcPopup,description, imageStyle }) => {

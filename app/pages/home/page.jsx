@@ -1,4 +1,5 @@
 "use client"
+
 import { useTranslation } from 'react-i18next';
 import MonBouton from '../../components/MyButton.jsx';
 import ServiceCard from '../../components/ServiceCard.jsx';
