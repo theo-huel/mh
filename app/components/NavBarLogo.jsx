@@ -1,3 +1,4 @@
+"use client"
 import React, { useState, useEffect } from 'react';
 import MyButton from './MyButton.jsx'
 import Image from 'next/image';
