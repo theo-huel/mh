@@ -16,19 +16,13 @@ import TeamPage from './pages/team/page.jsx'
 import ClientsLogos from './components/ClientsLogos.jsx';
 import ContactPage from './pages/contact/page.jsx'
 
-
-// Fonction pour initialiser l'état de la page
-// Elle vérifie d'abord le localStorage, sinon elle retourne 'home' par défaut.
-
 // Composant principal de l'application
 export default function App() {
- const [currentPage, setCurrentPage] = useState('home');
-  // Effet pour gérer le défilement et la persistance de l'état
-  useEffect(() => {
-    // 1. Défilement vers le haut lors du changement de page
-    window.scrollTo(0, 0);
+  const [currentPage, setCurrentPage] = useState('home');
 
-    
+  // Effet pour gérer le défilement vers le haut lors du changement de page
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, [currentPage]);
 
   const renderPage = () => {
@@ -39,7 +33,7 @@ export default function App() {
         return <AboutPage />;
       case 'services':
         return <ServicesPage />;
-      case 'equipe':
+        case 'equipe':
         return <TeamPage />;
       case 'contact':
         return <ContactPage />;
@@ -81,7 +75,7 @@ export default function App() {
 
       <Navbarlogo setCurrentPage={setCurrentPage} />
       {renderPage()}
-      <CallToAction setCurrentPage={setCurrentPage} />
+      <CallToAction setCurrentPage={setCurrentPage} /> {/* CTA en bas de chaque page */}
       <ClientsLogos/>
 
       <Footer setCurrentPage={setCurrentPage} />
