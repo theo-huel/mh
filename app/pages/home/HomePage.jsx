@@ -27,9 +27,9 @@ const HomePage = ({ setCurrentPage }) => {
             title={t("about.title")}
             subtitle={t("about.subtitle")}
           />
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+          <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
           <ReactMarkdown>{t("about.text")}</ReactMarkdown>
-          </p>
+          </div>
           <MonBouton onClick={() => setCurrentPage('about')} variant="primary">
             {t("about.button")} <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
           </MonBouton>

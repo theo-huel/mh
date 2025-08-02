@@ -10,11 +10,11 @@ import CallToAction from './components/CallToAction.jsx'
 import SectionTitle from './components/SectionTitle.jsx'
 import TestimonialCard from './components/TestimonialCard.jsx'
 import HomePage from './pages/home/HomePage.jsx'
-import AboutPage from './pages/about/page.jsx'
-import ServicesPage from './pages/services/page.jsx'
-import TeamPage from './pages/team/page.jsx'
+import AboutPage from './pages/about/AboutPage.jsx'
+import ServicesPage from './pages/services/ServicesPage.jsx'
+import TeamPage from './pages/team/TeamPage.jsx'
+import ContactPage from './pages/contact/ContactPage.jsx'
 import ClientsLogos from './components/ClientsLogos.jsx';
-import ContactPage from './pages/contact/page.jsx'
 
 // Composant principal de l'application
 export default function App() {
