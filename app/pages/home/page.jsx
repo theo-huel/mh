@@ -1,5 +1,3 @@
-"use client"
-
 import { useTranslation } from 'react-i18next';
 import MonBouton from '../../components/MyButton.jsx';
 import ServiceCard from '../../components/ServiceCard.jsx';
@@ -12,14 +10,11 @@ import { useRouter } from 'next/navigation'; // or 'next/router'
 import ReactMarkdown from 'react-markdown'
 
 
-
-
 const HomePage = ({ setCurrentPage }) => {
   const { t } = useTranslation("home");
-    const router = useRouter(); // Initialize the router
+  
 
-
-    return (
+  return (
     <main className="pt-20">
       <HeroSection setCurrentPage={setCurrentPage} />
 
@@ -33,9 +28,9 @@ const HomePage = ({ setCurrentPage }) => {
             title={t("about.title")}
             subtitle={t("about.subtitle")}
           />
-          <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-          <ReactMarkdown>{t("about.text")}</ReactMarkdown>
-          </div>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+            {t("about.text")}
+          </p>
           <MonBouton onClick={() => setCurrentPage('about')} variant="primary">
             {t("about.button")} <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
           </MonBouton>
