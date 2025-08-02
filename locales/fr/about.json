@@ -1,14 +1,32 @@
 {
   "about": {
-    "title": "À Propos de MH Business",
+    "title": "À Propos de nous",
     "subtitle": "MH Business accompagne les entrepreneurs et les PME dans leur développement stratégique et commercial.",
     "mission": {
       "h3": "Mission",
-      "p": "Accompagner les entrepreneurs et les PME dans leur structuration, leur développement commercial et leur croissance stratégique. Nous transformons les idées en plans concrets et les stratégies en actions, grâce à une approche personnalisée, humaine et orientée résultats. "
+      "h2": "Ce que tu fais aujourd'hui, pour qui, et comment",
+     
+      "p1": "Nous accompagnons les entrepreneurs et PME dans leur développement stratégique et commercial en leur donnant les outils concrets, un réseau de partenaires sélectionnés et qualifiés et surtout un accompagnement humain personnalisé en fonction de leurs besoins réels." ,
+      "p2": "Nous fixons des objectifs SMART (spécifiques, mesurables, atteignables, réalistes et temporels) en adaptant une approche sur-mesure orientée résultats.",
+      "p3": "Beaucoup de PME se fixent des objectifs \"non SMART\"",
+      "ex": "Exemple : \"Je veux développer mon chiffre d'affaires\"",
+      "p4": "Nous t'aidons alors à le transformer en SMART\n\n",
+      "ex1": "Exemple : \"Je veux augmenter mon chiffre d'affaires de 20% d'ici la fin de l'année, en signant 5 nouveaux clients PME via Linkedin et des évènements B2B\""
+
     },
     "vision": {
       "h3": "Vision",
-      "p": "Créer un écosystème de croissance agile, où les entreprises, les indépendants et les talents collaborent pour générer un impact durable. Nous croyons qu’un bon conseil ne se limite pas à un rapport, mais se vit sur le terrain, au plus près des réalités business."
+      "h2": "Ce que tu veux changer à long terme, l'impact que tu veux avoir",
+
+      "p1": "Nous voulons que chaque entrepreneur, chaque porteur de projet, chaque entreprise, ait les moyens de réussir peu importe la taille et le point de départ.",
+      "p2":"Nous croyons également dans une culture positive de l'échec : rater, apprendre, recommencer… C'est ainsi qu'on progresse, qu'on construit mieux, qu'on rectifie et qu'on finit par réussir. MH Business est là pour vous accompagner dans ces différentes étapes, sans jugement, mais avec une méthode humaine et personnalisée.",
+      "p3" : "Notre objectif dans le monde dans l'entrepreneuriat est que tout le monde puisse avoir accès aux meilleurs leviers de croissance c’est-à-dire une stratégie claire et adaptée, un accompagnement personnalisé et un réseau de qualité.",
+      "p4" : "Alors finalement notre ambition c'est quoi ?",
+      "p5" : "Créer un écosystème dynamique, centré sur l'humain et capable de s'adapter rapidement. Il va permettre de connecter les bonnes personnes, les bonnes idées et les bons outils. Un écosystème adapté qui va permettre d'atteindre les résultats fixés. Aujourd'hui, la force d'une entreprise se mesure à la capacité de pouvoir s'entourer intelligemment, d'évoluer rapidement et surtout d'avancer avec ses propres valeurs.",
+      "p6" : "Parlons d'une citation qui nous plait énormément :",
+      "p67" : " \"Se réunir est un début, rester ensemble est un progrès, travailler ensemble est la réussite\"",
+      "p7" : "Chez MH Business nous avons créé celle-ci : ",
+      "p70" : "\"La confiance dans une équipe est la clé : elle transforme l'effort collectif en résultats exceptionnels\""
     },
     "valeurs": {
       "h3": "Valeurs"

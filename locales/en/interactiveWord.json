@@ -2,42 +2,42 @@
   "intro": "Hover over each letter to discover our values.",
   "M": {
     "title": "Method",
-    "description": "Concrete tools to structure and act."
+    "description": "Structured approach, clear objectives, practical tools"
   },
   "H": {
     "title": "Human",
-    "description": "Support starts with listening and trust."
+    "description": "People are at the heart of what we do: listening, understanding, and providing support with trust and kindness"
   },
   "B": {
-    "title": "Business-oriented",
-    "description": "Every action aims at performance and growth."
+    "title": "Kindness",
+    "description": "Failure is seen as a learning opportunity — we encourage perseverance and growth."
   },
   "U": {
-    "title": "Usefulness",
-    "description": "Advice that is truly applicable, designed for the field."
+    "title": "Unity",
+    "description": "The strength of a network, a team, and collective action."
   },
   "S1": {
     "title": "Strategy",
-    "description": "Nothing is left to chance; everything starts from a clear vision."
+    "description": "A clear and tailored vision to achieve growth and performance"
   },
   "I": {
-    "title": "Impact",
-    "description": "What matters are lasting results."
+    "title": "Innovation",
+    "description": "Bringing fresh perspectives and concrete new ideas"
   },
   "N": {
-    "title": "Network",
-    "description": "A strong network to multiply opportunities."
+    "title": "Novelty",
+    "description": "Embracing change and curiosity. Let’s avoid stagnation."
   },
   "E": {
-    "title": "Engagement",
-    "description": "Present at every step, to see it through together."
+    "title": "Commitment",
+    "description": "Tailored support until our clients succeed"
   },
   "S2": {
     "title": "Simplicity",
-    "description": "Making the complex accessible."
+    "description": "Accessibility, clarity, and ease in all our interactions"
   },
   "S3": {
     "title": "Flexibility",
-    "description": "Adapting to each company, each reality."
+    "description": "Ability to adapt and make quick adjustments"
   }
 }

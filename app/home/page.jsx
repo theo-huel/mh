@@ -1,19 +1,23 @@
 "use client"
 
 import { useTranslation } from 'react-i18next';
-import MonBouton from '../../components/MyButton.jsx';
-import ServiceCard from '../../components/ServiceCard.jsx';
-import HeroSection from '../../components/HeroSection.jsx';
-import SectionTitle from '../../components/SectionTitle.jsx';
-import TestimonialCard from '../../components/TestimonialCard.jsx';
-import Icon from '../../components/Icon.jsx';
+import MonBouton from '../components/MyButton.jsx';
+import ServiceCard from '../components/ServiceCard.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import SectionTitle from '../components/SectionTitle.jsx';
+import TestimonialCard from '../components/TestimonialCard.jsx';
+import Icon from '../components/Icon.jsx';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation'; // or 'next/router'
+import ReactMarkdown from 'react-markdown'
+
 
 
 
 const HomePage = ({ setCurrentPage }) => {
   const { t } = useTranslation("home");
-  
+    const router = useRouter(); // Initialize the router
+
 
     return (
     <main className="pt-20">
@@ -29,9 +33,9 @@ const HomePage = ({ setCurrentPage }) => {
             title={t("about.title")}
             subtitle={t("about.subtitle")}
           />
-          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
-            {t("about.text")}
-          </p>
+          <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+          <ReactMarkdown>{t("about.text")}</ReactMarkdown>
+          </div>
           <MonBouton onClick={() => setCurrentPage('about')} variant="primary">
             {t("about.button")} <Icon name="ChevronRight" className="inline-block ml-2 w-5 h-5" />
           </MonBouton>

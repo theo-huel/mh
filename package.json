@@ -16,7 +16,8 @@
     "nodemailer": "^7.0.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-i18next": "^15.6.0"
+    "react-i18next": "^15.6.0",
+    "react-markdown": "^10.1.0"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

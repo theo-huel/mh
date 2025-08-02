@@ -2,42 +2,42 @@
   "intro": "Survole chaque lettre pour découvrir nos valeurs.",
   "M": {
     "title": "Méthode",
-    "description": "Des outils concrets pour structurer et agir."
+    "description": "Approche structurée, objectifs clairs, outils concrets"
   },
   "H": {
     "title": "Humain",
-    "description": "L’accompagnement commence par l’écoute et la confiance."
+    "description": "Humain est au cœur de ce que nous faisons, écouter, comprendre, accompagnement avec confiance et bienveillance"
   },
   "B": {
-    "title": "Business-oriented",
-    "description": "Chaque action vise la performance et la croissance."
+    "title": "Bienveillance ",
+    "description": "L'échec est considéré comme un apprentissage, nous encourageons la persévérance et la croissance."
   },
   "U": {
-    "title": "Utilité",
-    "description": "Des conseils réellement applicables, pensés pour le terrain."
+    "title": "Unité",
+    "description": "La force d'un réseau, d'une équipe, et la collectivité."
   },
   "S1": {
     "title": "Stratégie",
-    "description": "On ne laisse rien au hasard, tout part d’une vision claire."
+    "description": "Vision claire et adaptée pour atteindre la croissance et la performance"
   },
   "I": {
-    "title": "Impact",
-    "description": "Ce qui compte, ce sont les résultats durables."
+    "title": "Innovation",
+    "description": "Apporter un regard neuf et de nouvelles idées concrètes"
   },
   "N": {
-    "title": "Network",
-    "description": "Un réseau solide pour multiplier les opportunités."
+    "title": "Nouveauté",
+    "description": "Le changement et la curiosité. Evitons de stagner"
   },
   "E": {
     "title": "Engagement",
-    "description": "Présents à chaque étape, pour aller au bout ensemble."
+    "description": "Accompagnement sur mesure jusqu'à la réussite de nos clients"
   },
   "S2": {
     "title": "Simplicité",
-    "description": "Rendre accessible ce qui paraît complexe."
+    "description": "Accessible, clarté et facilité dans tous nos échanges"
   },
   "S3": {
     "title": "Souplesse",
-    "description": "S’adapter à chaque entreprise, chaque réalité."
+    "description": "Capacité d'adaptation & ajustements rapides"
   }
 }

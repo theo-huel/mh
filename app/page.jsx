@@ -9,22 +9,16 @@ import ServiceCard from './components/ServiceCard.jsx'
 import CallToAction from './components/CallToAction.jsx'
 import SectionTitle from './components/SectionTitle.jsx'
 import TestimonialCard from './components/TestimonialCard.jsx'
-import HomePage from './pages/home/page.jsx'
-import AboutPage from './pages/about/page.jsx'
-import ServicesPage from './pages/services/page.jsx'
-import TeamPage from './pages/team/page.jsx'
+import HomePage from './home/page.jsx'
+import AboutPage from './about/page.jsx'
+import ServicesPage from './services/page.jsx'
+import TeamPage from './team/page.jsx'
 import ClientsLogos from './components/ClientsLogos.jsx';
-import ContactPage from './pages/contact/page.jsx'
+import ContactPage from './contact/page.jsx'
 
 
 // Fonction pour initialiser l'état de la page
 // Elle vérifie d'abord le localStorage, sinon elle retourne 'home' par défaut.
-const getInitialPage = () => {
-  if (typeof window !== 'undefined') {
-    return localStorage.getItem('currentPage') || 'home';
-  }
-  return 'home';
-};
 
 // Composant principal de l'application
 export default function App() {

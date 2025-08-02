@@ -11,6 +11,8 @@ const logos = [
   { src: '/img/nealiaNet.png', alt: 'Logo Client 1' },
   { src: '/img/HVLOGO.jpg', alt: 'Logo Client 2' },
   { src: '/img/logo Degrave.jpg', alt: 'Logo Client 3' },
+  { src: '/img/imgMegabike.jpg', alt: 'Logo Client 4' },
+
   // ... ajoutez tous vos logos ici
 ];
 

@@ -1,10 +1,10 @@
 "use client"
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import MonBouton from '../../components/Nouv/MonBouton.jsx';
-import SectionTitle from '../../components/SectionTitle.jsx';
-import btn from '../../css/MonBouton.module.css';
-import Icon from '../../components/Icon.jsx';
+import MonBouton from '../components/Nouv/MonBouton.jsx';
+import SectionTitle from '../components/SectionTitle.jsx';
+import btn from '../css/MonBouton.module.css';
+import Icon from '../components/Icon.jsx';
 
 
 
