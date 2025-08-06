@@ -41,7 +41,7 @@
     "imageAlt": "Illustration des avantages"
   },
   "testimonials": {
-    "title": "Ce que disent mes clients",
+    "title": "Ils racontent leur expérience",
     "subtitle": "La satisfaction de mes clients, ma plus grande fierté.",
     "1": {
       "quote": "Merci à MH Business pour sa disponibilité aux questions et pour son accompagnement dans la conception du cadre marketing, du ciblage clients et d'une offre tarifiaire opérationnel.",
@@ -61,12 +61,12 @@
   },
     "hero":{
       "title" : "« MH Business, quand la stratégie devient action »",
-      "btn1" : "Découvrir mes services",
-      "btn2" :  "Prendre rendez-vous"
+      "btn1" : "Découvrir nos services",
+      "btn2" :  "Discutons-en ?"
     }
     ,
     "calltoaction":{
-      "h2" : "Prêt à propulser votre entreprise ?",
+      "h2" : "Stratégie. Structurer. Développer. Accompagner.",
       "p" : "Que ce soit pour un site web, une identité visuelle forte ou une meilleure gestion, MH Business est là pour vous.",
       "btn" :  "Contactez-moi dès aujourd'hui !"
     }

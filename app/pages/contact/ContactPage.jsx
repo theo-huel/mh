@@ -5,54 +5,87 @@ import MonBouton from '../../components/Nouv/MonBouton.jsx';
 import SectionTitle from '../../components/SectionTitle.jsx';
 import btn from '../../css/MonBouton.module.css';
 import Icon from '../../components/Icon.jsx';
+        
 
 
 
 // Page Contact
 
+
 const ContactPage = () => {
   const { t } = useTranslation('contact');
+  const handleSelect = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   const [formData, setFormData] = useState({
-    name: '',
+    companyName:'',
+    contactPerson:'',
     email: '',
-    subject: '',
     message: '',
   });
   const [status, setStatus] = useState('');
+  const [selectedOption, setSelectedOption] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setStatus(t('sending'));
+  const [value, setValue] = useState('');
 
-    try {
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const result = await response.json();
-
-      if (response.ok) {
-        setStatus(t('successMessage'));
-        setFormData({ name: '', email: '', subject: '', message: '' });
-        setTimeout(() => setStatus(''), 5000);
-      } else {
-        setStatus(`${t('error')}: ${result.message || t('defaultError')}`);
-      }
-    } catch (error) {
-      console.error('Form error:', error);
-      setStatus(t('serverError'));
+  const handleChangePhone = (e) => {
+    const newValue = e.target.value;
+    // Autoriser uniquement les chiffres et le + en première position
+    if (/^\+?\d*$/.test(newValue)) {
+      setValue(newValue);
     }
   };
+
+  
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setStatus(t('sending'));
+
+  // Construire les données complètes à envoyer
+  const fullData = {
+    ...formData,
+    phoneNbr: value, // Remplacer par le vrai numéro entré
+    // contactType: selectedOption, // Ajouter le type de contact sélectionné
+  };
+
+  try {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(fullData),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      setStatus(t('successMessage'));
+      setFormData({
+        companyName: '',
+        contactPerson: '',
+        phoneNbr: '',
+        email: '',
+        message: '',
+      });
+      setValue('');
+      setSelectedOption('');
+      setTimeout(() => setStatus(''), 5000);
+    } else {
+      setStatus(`${t('error')}: ${result.message || t('defaultError')}`);
+    }
+  } catch (error) {
+    console.error('Form error:', error);
+    setStatus(t('serverError'));
+  }
+};
+
 
   return (
     <main className="pt-10 bg-gray-50">
@@ -64,13 +97,37 @@ const ContactPage = () => {
         <div className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
           <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">{t('name')}</label>
+              <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-2">{t('companyName')}</label>
               <input
                 type="text"
-                id="name"
-                name="name"
-                value={formData.name}
+                id="companyName"
+                name="companyName"
+                value={formData.companyName}
                 onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
+              />
+            </div>
+            <div>
+              <label htmlFor="contactPerson" className="block text-sm font-medium text-gray-700 mb-2">{t('contactPerson')}</label>
+              <input
+                type="text"
+                id="contactPerson"
+                name="contactPerson"
+                value={formData.contactPerson}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
+              />
+            </div>
+            <div>
+              <label htmlFor="phoneNbr" className="block text-sm font-medium text-gray-700 mb-2">{t('phoneNbr')}</label>
+              <input
+                type="text"
+                id="phoneNbr"
+                name="phoneNbr"
+                value={value}
+                onChange={handleChangePhone}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
               />
@@ -87,7 +144,25 @@ const ContactPage = () => {
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
               />
             </div>
-            <div>
+        <div>
+      <label htmlFor="dropdown">{t('select1')}</label>
+      <select id="dropdown" value={selectedOption} onChange={handleSelect} 
+      className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
+      required>
+        <option value="">{t('select.default')}</option>
+        <option value="phone">{t('select.phone')}</option>
+        <option value="visio">{t('select.visio')}</option>
+        <option value="present">{t('select.present')}</option>
+      </select>
+            </div> 
+
+
+            {/* <div>
+              <iframe src="https://calendar.google.com/calendar/embed?src=matis%40mhbusiness.be&ctz=Europe%2FBrussels" 
+              style="border: 0" width="800" height="600" frameBorder="0" scrolling="no"></iframe>
+            </div> */}
+
+            {/* <div>
               <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">{t('subject')}</label>
               <input
                 type="text"
@@ -98,7 +173,7 @@ const ContactPage = () => {
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
               />
-            </div>
+            </div> */}
             <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">{t('message')}</label>
               <textarea
@@ -121,7 +196,7 @@ const ContactPage = () => {
             )}
           </form>
 
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">{t('directInfoTitle')}</h3>
             <p className="text-gray-700 text-lg mb-2">
               <Icon name="Mail" className="inline-block w-6 h-6 mr-2 text-[#AD9551]" />
@@ -134,7 +209,7 @@ const ContactPage = () => {
             <p className="text-gray-700 text-lg mt-2">
               {t('responseCommitment')}
             </p>
-          </div>
+          </div> */}
         </div>
       </section>
     </main>

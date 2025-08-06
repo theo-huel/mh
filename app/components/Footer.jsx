@@ -18,7 +18,7 @@ const Footer = ({ setCurrentPage }) => {
 
 
   return(
-  <footer className="bg-gray-900 text-white py-12">
+  <footer className="bg-black text-white py-12">
     <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
       {/* Section 1: À Propos */}
       <div>

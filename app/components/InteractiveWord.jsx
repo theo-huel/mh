@@ -50,7 +50,7 @@ const InteractiveWord = () => {
         ))}
       </div>
 
-      <div className="relative mt-4 max-w-lg px-6 py-4 bg-white rounded-xl shadow-md text-gray-700 text-center text-lg animate-fade-in transition-opacity duration-300 ease-in-out">
+      <div className="relative max-w-lg px-6 py-4 bg-white rounded-xl shadow-md text-gray-700 text-center text-lg animate-fade-in transition-opacity duration-300 ease-in-out">
         <div className="absolute -top-3 left-1/2 transform -translate-x-1/2 w-3 h-3 bg-white rotate-45 shadow-md" />
         {activeKey ? (
           <p>

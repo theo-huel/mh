@@ -1,7 +1,9 @@
 {
   "pageTitle": "Contactez MH Business",
   "pageSubtitle": "Discutons de votre projet et de la manière dont je peux vous aider.",
-  "name": "Nom Complet",
+  "companyName": "Nom de l'entreprise",
+  "contactPerson": "Personne de Contact",
+  "phoneNbr": "Num. Téléphone",
   "email": "Adresse Email",
   "subject": "Sujet",
   "message": "Votre Message",
@@ -12,5 +14,12 @@
   "defaultError": "Quelque chose s'est mal passé.",
   "serverError": "Erreur de connexion au serveur. Veuillez réessayer plus tard.",
   "directInfoTitle": "Informations Directes",
-  "responseCommitment": "Je m'engage à vous répondre dans les plus brefs délais."
+  "responseCommitment": "Je m'engage à vous répondre dans les plus brefs délais.",
+  "select1": "Sélectionnez un format de rendez-vous :",
+  "select" : {
+    "default" : "-- Sélectionnez --",
+    "phone" : "Téléphone",
+    "visio" : "Visio",
+    "present" : "Présentiel"
+  }
 }

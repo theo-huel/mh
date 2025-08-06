@@ -1,12 +1,19 @@
 {
   "about": {
     "title": "À Propos de nous",
-    "subtitle": "MH Business accompagne les entrepreneurs et les PME dans leur développement stratégique et commercial.",
+    "subtitle": "Stratégie. Accompagnement. Relationnel. Conseil.",
+    "subtitle1": "MH Business aide les indépendants et les PME à se structurer, à développer leurs activités et d'agrandir leur réseau. Nous proposons un accompagnement complet, humain et personnalisé.",
+    "subtitle2": "Vous ressentez ce besoin d'être accompagné, conseillé, ou tout simplement de grandir ?",
+
     "mission": {
       "h3": "Mission",
       "h2": "Ce que tu fais aujourd'hui, pour qui, et comment",
      
-      "p1": "Nous accompagnons les entrepreneurs et PME dans leur développement stratégique et commercial en leur donnant les outils concrets, un réseau de partenaires sélectionnés et qualifiés et surtout un accompagnement humain personnalisé en fonction de leurs besoins réels." ,
+      "p1": "Nous aidons les entrepreneurs et dirigeants de PME à structurer leur développement stratégique et commercial.",
+      "pp": "Nous mettons à disposition :", 
+      "pp1":"Des outils concrets",
+      "pp2":"Un réseau de partenaires sélectionnés",
+      "pp3":"Un accompagnement humain et personnalisé",
       "p2": "Nous fixons des objectifs SMART (spécifiques, mesurables, atteignables, réalistes et temporels) en adaptant une approche sur-mesure orientée résultats.",
       "p3": "Beaucoup de PME se fixent des objectifs \"non SMART\"",
       "ex": "Exemple : \"Je veux développer mon chiffre d'affaires\"",
@@ -29,7 +36,7 @@
       "p70" : "\"La confiance dans une équipe est la clé : elle transforme l'effort collectif en résultats exceptionnels\""
     },
     "valeurs": {
-      "h3": "Valeurs"
+      "h3": "Ce qui nous guide"
   }
   }
 }

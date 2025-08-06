@@ -13,8 +13,18 @@ const AboutPage = () => {
       <SectionTitle
         title={t("about.title")}
         subtitle={t("about.subtitle")}
+        subtitle1={t("about.subtitle1")}
+        subtitle2={t("about.subtitle2")}
         />
+
+
+        
       <div className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8 md:p-12">
+         <div className="flex-1 text-center md:text-center mb-20">
+        <h3 className="text-4xl font-extrabold text-gray-900 mb-2 text-center">{t("about.valeurs.h3")}</h3>
+      
+        <InteractiveWord/>
+          </div>
        <div className="flex flex-col md:flex-row items-center md:items-start mb-12 md:mb-20 px-6 md:px-0 max-w-5xl mx-auto">
   {/* Image éventuellement à remettre plus tard */}
   {/* <img
@@ -30,6 +40,19 @@ const AboutPage = () => {
 
     <div className="space-y-6 text-gray-700 text-lg leading-relaxed ">
       <p>{t("about.mission.p1")}</p>
+      <p>{t("about.mission.pp")}</p>
+
+      <div className="space-y-6 text-gray-700 text-left ">
+        <ul className="list-disc pl-50">
+          <li>{t("about.mission.pp1")}</li>
+          <li>{t("about.mission.pp2")}</li>
+          <li>{t("about.mission.pp3")}</li>
+        </ul>
+
+      </div>
+      
+
+
       <p>{t("about.mission.p2")}</p>
               <p className="underline mb-2">{t("about.mission.p3")}</p>
 
@@ -80,36 +103,6 @@ const AboutPage = () => {
         </div>
 
   </div>
-        
-
-        
-          
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-          {/* <div className="bg-indigo-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Lightbulb" className="w-6 h-6 mr-2" /> Écoute & Compréhension</h4>
-            <p className="text-gray-700">Je prends le temps de comprendre vos défis, vos objectifs et votre vision pour proposer des solutions sur mesure.</p>
-          </div>
-          <div className="bg-indigo-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="CheckCircle" className="w-6 h-6 mr-2" /> Pragmatisme & Efficacité</h4>
-            <p className="text-gray-700">Mes actions sont orientées résultats, avec des solutions concrètes et rapidement applicables.</p>
-          </div>
-          <div className="bg-indigo-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Users" className="w-6 h-6 mr-2" /> Transparence & Confiance</h4>
-            <p className="text-gray-700">Une communication claire et honnête est la base d'une collaboration réussie.</p>
-          </div>
-          <div className="bg-indigo-50 p-6 rounded-lg">
-            <h4 className="font-semibold text-xl text-[#AD9551] mb-3 flex items-center"><Icon name="Briefcase" className="w-6 h-6 mr-2" /> Réseau & Partenariats</h4>
-            <p className="text-gray-700">Je m'appuie sur un réseau de professionnels de confiance pour compléter mon expertise quand nécessaire.</p>
-          </div> */}
-
-        </div>
-
-
-        <h3 className="text-4xl font-extrabold text-gray-900 mb-2 text-center">{t("about.valeurs.h3")}</h3>
-
-        <p className="text-gray-700 text-lg leading-relaxed mb-8">
-        </p>
-        <InteractiveWord/>
       </div>
     </section>
   </main>

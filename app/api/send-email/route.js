@@ -18,10 +18,10 @@ const transporter = nodemailer.createTransport({
 export async function POST(request) {
   try {
     // Analyse le corps de la requête JSON
-    const { name, email, subject, message } = await request.json();
+    const { companyName,contactPerson,phoneNbr,selectedOption, email, message } = await request.json();
 
     // Vérifie si toutes les données nécessaires sont présentes
-    if (!name || !email || !subject || !message) {
+    if (!companyName || !email || !contactPerson   || !phoneNbr  || !message) {
       return NextResponse.json(
         { message: 'Tous les champs du formulaire sont requis.' },
         { status: 400 }
@@ -30,13 +30,15 @@ export async function POST(request) {
 
     // 1. Envoi de l'e-mail à ta boîte de réception (l'administrateur du site)
     const adminMailOptions = {
-      from: process.env.EMAIL_USER,
+      from: `"MH Business form" <${process.env.EMAIL_USER}>`,
       to: process.env.ADMIN_EMAIL,
-      subject: `Nouveau message | Sujet : ${subject}`,
+      subject: `Nouveau message | De : ${companyName}`,
       html: `
-        <p><strong>Nom:</strong> ${name}</p>
+        <p><strong>Nom d'entreprise:</strong> ${companyName}</p>
+        <p><strong>Personne de contact:</strong> ${contactPerson}</p>
+        <p><strong>Numéro de téléphone:</strong> ${phoneNbr}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Sujet:</strong> ${subject}</p>
+        <p><strong>Option de contact:</strong> ${selectedOption}</p>
         <p><strong>Message:</strong><br>${message}</p>
       `,
     };
@@ -46,15 +48,16 @@ export async function POST(request) {
 
     // 2. Envoi de l'e-mail de confirmation automatique à l'expéditeur du formulaire
     const userMailOptions = {
-      from: process.env.ADMIN_EMAIL,
+      from: `"MH Business auto-reply" <${process.env.EMAIL_USER}>`,
       to: email,
       subject: `Confirmation de réception de votre message - MH Business`,
       html: `
-        <p>Bonjour ${name},</p>
+        <p>Bonjour ${contactPerson},</p>
         <p>Nous avons bien reçu votre message et vous remercions de nous avoir contactés. Nous reviendrons vers vous dans les plus brefs délais.</p>
         <p>Voici un récapitulatif de votre message :</p>
-        <p><strong>Sujet:</strong> ${subject}</p>
+        <p><strong>Nom de l'entreprise:</strong> ${companyName}</p>
         <p><strong>Message:</strong><br>${message}</p>
+        <p><strong>oPTION de contact :</strong><br>${selectedOption}</p>
         <p>Cordialement,</p>
         <p>L'équipe MH Business</p>
       `,

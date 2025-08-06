@@ -20,8 +20,9 @@ const HeroSection = ({ setCurrentPage }) => {
   {/* ⬇️ CENTRAGE VERTICAL & HORIZONTAL ⬇️ */}
   <div className="container mx-auto px-6 relative z-10 flex flex-col justify-center items-center text-center min-h-[10vh]">
     <h2
-      className="text-2xl md:text-4xl leading-tight mb-6 animate-fade-in-up"
-      style={{ fontFamily: 'Times New Roman, serif' }}
+      className="text-2xl md:text-4xl leading-tight mb-6 animate-slide-in-left"
+      
+      // style={{ fontFamily: 'Times New Roman, serif' }}
     >
       {t("hero.title")}
     </h2>
@@ -36,6 +37,8 @@ const HeroSection = ({ setCurrentPage }) => {
         </MonBouton> 
         <MyButton onClick={() => setCurrentPage('contact')} variant="secondary" >
          {t("hero.btn2")}
+        <Icon name="Coffee" className="inline-block w-5 h-5 ml-2 mb-1" />
+
         </MyButton>
       </div>
   </div>
