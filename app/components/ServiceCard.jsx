@@ -1,10 +1,9 @@
 import Icon from './Icon.jsx';
 
-
 const ServiceCard = ({ iconName, title, subtitle, description, isOpen, onToggle, onClick }) => (
   <div
     onClick={onClick || onToggle}
-    className="bg-white rounded-xl shadow-lg p-8 transform transition duration-300 ease-in-out border border-gray-100 cursor-pointer"
+    className="bg-white rounded-xl shadow-lg p-8 transform transition duration-300 ease-in-out hover:scale-105 border border-gray-100 cursor-pointer"
   >
     <div className="text-[#AD9551] mb-6 text-5xl flex justify-center">
       <Icon name={iconName} className="w-16 h-16" />
@@ -21,4 +20,3 @@ const ServiceCard = ({ iconName, title, subtitle, description, isOpen, onToggle,
 );
 
 export default ServiceCard;
-

@@ -50,8 +50,8 @@ const Footer = ({ setCurrentPage }) => {
         <h3 className="text-xl font-bold mb-4 text-[#AD9551]">{t("footer.contact")}</h3>
         <p className="text-gray-400 flex items-center mb-2">
           <Icon name="Mail" className="w-5 h-5 mr-2 text-[#AD9551]" />
-          contact@mhbusiness.com
-        </p>
+          matis@mhbusiness.be        
+          </p>
         <p className="text-gray-400 flex items-center">
           <Icon name="Phone" className="w-5 h-5 mr-2 text-[#AD9551]" />
           0477 64 46 42

@@ -18,7 +18,7 @@ const transporter = nodemailer.createTransport({
 export async function POST(request) {
   try {
     // Analyse le corps de la requête JSON
-    const { companyName,contactPerson,phoneNbr,selectedOption, email, message } = await request.json();
+    const { companyName,contactPerson,phoneNbr,contactType, email, message } = await request.json();
 
     // Vérifie si toutes les données nécessaires sont présentes
     if (!companyName || !email || !contactPerson   || !phoneNbr  || !message) {
@@ -38,7 +38,7 @@ export async function POST(request) {
         <p><strong>Personne de contact:</strong> ${contactPerson}</p>
         <p><strong>Numéro de téléphone:</strong> ${phoneNbr}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Option de contact:</strong> ${selectedOption}</p>
+        <p><strong>Option de contact:</strong> ${contactType}</p>
         <p><strong>Message:</strong><br>${message}</p>
       `,
     };
@@ -57,7 +57,8 @@ export async function POST(request) {
         <p>Voici un récapitulatif de votre message :</p>
         <p><strong>Nom de l'entreprise:</strong> ${companyName}</p>
         <p><strong>Message:</strong><br>${message}</p>
-        <p><strong>oPTION de contact :</strong><br>${selectedOption}</p>
+        <p><strong>Num Tel :</strong><br>${phoneNbr}</p>
+        <p><strong>oPTION de contact :</strong><br>${contactType}</p>
         <p>Cordialement,</p>
         <p>L'équipe MH Business</p>
       `,

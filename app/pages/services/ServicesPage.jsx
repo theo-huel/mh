@@ -3,9 +3,44 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import ServiceCard from '../../components/ServiceCard.jsx';
 import SectionTitle from '../../components/SectionTitle.jsx';
+import ContactPage from '../contact/ContactPage.jsx'
+
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const FadeInOnScroll = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: -100 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 
 
+const FadeInOnScrollBottom = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 
 
@@ -48,23 +83,29 @@ const ServicesPage = () => {
   return (
     <main className="pt-10 bg-gray-50">
       <section className="py-16 container mx-auto px-6">
+        <FadeInOnScroll delay={0.2}>
         <SectionTitle
           title={t("pageTitle")}
           subtitle={t("pageSubtitle")}
         />
-
+        </FadeInOnScroll>
         <div className="max-w-6xl mx-auto space-y-8">
+          <FadeInOnScroll delay={0.3}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-start">
-            {services.slice(0, 3).map((service, index) => (
+            
+              {services.slice(0, 3).map((service, index) => (
+              
               <ServiceCard
                 key={index}
                 {...service}
                 isOpen={openIndex === index}
                 onToggle={() => toggleCard(index)}
               />
-            ))}
+             
+            ))} 
           </div>
-
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={0.4}>
           {services.length > 3 && (
             <div className="flex flex-wrap justify-center gap-8">
               {services.slice(3).map((service, index) => (
@@ -77,11 +118,19 @@ const ServicesPage = () => {
               ))}
             </div>
           )}
+          </FadeInOnScroll>
+          <FadeInOnScrollBottom delay={0.2}>
+          <div className="text-center mt-12 text-gray-700 text-lg">
+            <p>{t("footerNote")}</p>
+          </div>
+          </FadeInOnScrollBottom>
         </div>
+        
+          <FadeInOnScrollBottom delay={1}>
+            <ContactPage/>
+          </FadeInOnScrollBottom>
+          
 
-        <div className="text-center mt-12 text-gray-700 text-lg">
-          <p>{t("footerNote")}</p>
-        </div>
       </section>
     </main>
   );

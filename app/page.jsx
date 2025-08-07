@@ -16,6 +16,59 @@ import TeamPage from './pages/team/TeamPage.jsx'
 import ContactPage from './pages/contact/ContactPage.jsx'
 import ClientsLogos from './components/ClientsLogos.jsx';
 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const FadeInOnScroll = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+const FadeInOnScrollBottom = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: -40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
+
+
+const FadeInOnScrollRight = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, x: 200 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 // Composant principal de l'application
 export default function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -75,10 +128,17 @@ export default function App() {
 
       <Navbarlogo setCurrentPage={setCurrentPage} />
       {renderPage()}
-      <CallToAction setCurrentPage={setCurrentPage} /> {/* CTA en bas de chaque page */}
-      <ClientsLogos/>
-
-      <Footer setCurrentPage={setCurrentPage} />
+      <FadeInOnScroll delay={0.2}>
+      
+      {(currentPage !== "contact" && currentPage !== "services") && <CallToAction setCurrentPage={setCurrentPage} />}
+      </FadeInOnScroll>
+      <FadeInOnScrollRight delay={0.2}>
+       <ClientsLogos/> 
+      </FadeInOnScrollRight>
+      <FadeInOnScroll delay={0.2}>
+       <Footer setCurrentPage={setCurrentPage} />
+      </FadeInOnScroll>
+      
     </div>
   );
 }

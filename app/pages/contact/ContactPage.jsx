@@ -5,7 +5,26 @@ import MonBouton from '../../components/Nouv/MonBouton.jsx';
 import SectionTitle from '../../components/SectionTitle.jsx';
 import btn from '../../css/MonBouton.module.css';
 import Icon from '../../components/Icon.jsx';
-        
+ 
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
+const FadeInOnScroll = ({ children, delay = 0 }) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 40 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
+       
 
 
 
@@ -14,9 +33,6 @@ import Icon from '../../components/Icon.jsx';
 
 const ContactPage = () => {
   const { t } = useTranslation('contact');
-  const handleSelect = (event) => {
-    setSelectedOption(event.target.value);
-  };
 
   const [formData, setFormData] = useState({
     companyName:'',
@@ -24,15 +40,26 @@ const ContactPage = () => {
     email: '',
     message: '',
   });
+
   const [status, setStatus] = useState('');
-  const [selectedOption, setSelectedOption] = useState('');
+
+  const [selectedOption, setSelectedOption] = useState({
+    phone:'',
+    visio: '',
+    present: '',
+  });
+  
+  const [value, setValue] = useState('');
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
-
-  const [value, setValue] = useState('');
+   
+  const handleSelect = (event) => {
+    setSelectedOption(event.target.value);
+  };
 
   const handleChangePhone = (e) => {
     const newValue = e.target.value;
@@ -42,7 +69,6 @@ const ContactPage = () => {
     }
   };
 
-  
   const handleSubmit = async (e) => {
   e.preventDefault();
   setStatus(t('sending'));
@@ -51,7 +77,7 @@ const ContactPage = () => {
   const fullData = {
     ...formData,
     phoneNbr: value, // Remplacer par le vrai numéro entré
-    // contactType: selectedOption, // Ajouter le type de contact sélectionné
+    contactType: selectedOption, // Ajouter le type de contact sélectionné
   };
 
   try {
@@ -89,6 +115,7 @@ const ContactPage = () => {
 
   return (
     <main className="pt-10 bg-gray-50">
+      <FadeInOnScroll delay={0.2}>
       <section className="py-16 container mx-auto px-6">
         <SectionTitle
           title={t('pageTitle')}
@@ -148,12 +175,13 @@ const ContactPage = () => {
       <label htmlFor="dropdown">{t('select1')}</label>
       <select id="dropdown" value={selectedOption} onChange={handleSelect} 
       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-indigo-500 focus:border-indigo-500 transition duration-200"
-      required>
-        <option value="">{t('select.default')}</option>
-        <option value="phone">{t('select.phone')}</option>
-        <option value="visio">{t('select.visio')}</option>
-        <option value="present">{t('select.present')}</option>
+      required >
+        <option  value=''>{t('select.default')}</option>
+        <option value={selectedOption.phone}>{t('select.phone')}</option>
+        <option value={selectedOption.visio}>{t('select.visio')}</option>
+        <option value={selectedOption.present}>{t('select.present')}</option>
       </select>
+      
             </div> 
 
 
@@ -212,6 +240,7 @@ const ContactPage = () => {
           </div> */}
         </div>
       </section>
+      </FadeInOnScroll>
     </main>
   );
 };
